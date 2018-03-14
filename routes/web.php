@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@home')->name('pages.home');
+Route::get('/contact', 'PagesController@contact')->name('pages.contact');
+Route::get('/about', 'PagesController@about')->name('pages.about');
+Route::get('/why-us', 'PagesController@whyus')->name('pages.whyus');
+
+Route::group([
+    'prefix' => 'admin',
+    'namespace' => 'Admin',
+    'middleware' => 'auth'],
+    function () {
+        Route::get('/', 'AdminController@index')->name('dashboard');
+    });
+
+Auth::routes();
