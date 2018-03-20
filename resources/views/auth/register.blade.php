@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="section">
+    <section class="formulario-registro">
         <div class="container">
             <div class="row">
                 <div class="col-md-2"></div>
@@ -71,6 +71,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 @endsection

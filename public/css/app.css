@@ -1,13 +1,19 @@
-.texto-negro:focus {
-    color: black;
+.contenedor {
+    margin-top: 30px;
 }
 
-.texto-negro {
-    color: black;
-}
-
-.no-button {
-    text-decoration: none;
-    background-color: transparent;
+.quitar-estilos-boton {
     border: none;
+    color: white;
+    text-transform: uppercase;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.quitar-estilos-boton:hover {
+    background-color: transparent;
+}
+
+.formulario-login, .formulario-registro {
+    margin-top: 70px;
 }

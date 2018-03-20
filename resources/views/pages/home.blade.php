@@ -3,20 +3,13 @@
 @section('content')
 
 
-    <!-- Start Get-Strted Section -->
-    <section class=" section">
+    <header class="masthead bg-primary text-white text-center">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    <div class="great-started-text text-center">
-                        <h4 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">We Are Ready to Help You</h4>
-                        <h2 class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Get the Best Solution</h2>
-                        <a href="{{ route('register') }}" class="btn btn-common wow fadeInUp" data-wow-duration="3000ms" data-wow-delay="100ms">Get Started</a>
-                    </div>
-                </div>
-            </div>
+            <img class="img-fluid mb-5 d-block mx-auto" src="/img/profile.png" alt="">
+            <h1 class="text-uppercase mb-0">Start Bootstrap</h1>
+            <hr class="star-light">
+            <h2 class="font-weight-light mb-0">Web Developer - Graphic Artist - User Experience Designer</h2>
         </div>
-    </section>
-    <!-- End Get-Strted Section -->
+    </header>
 
 @endsection

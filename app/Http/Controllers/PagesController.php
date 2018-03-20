@@ -13,7 +13,7 @@ class PagesController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except(['home', 'contact', 'about', 'whyus']);
+        $this->middleware('auth')->except(['home', 'contact', 'about']);
     }
 
     /**
@@ -34,10 +34,5 @@ class PagesController extends Controller
     public function contact()
     {
         return view('pages.contact');
-    }
-
-    public function whyus()
-    {
-        return view('pages.whyus');
     }
 }

@@ -14,7 +14,6 @@
 Route::get('/', 'PagesController@home')->name('pages.home');
 Route::get('/contact', 'PagesController@contact')->name('pages.contact');
 Route::get('/about', 'PagesController@about')->name('pages.about');
-Route::get('/why-us', 'PagesController@whyus')->name('pages.whyus');
 
 Route::group([
     'prefix' => 'admin',

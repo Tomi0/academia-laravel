@@ -12,7 +12,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('meta-title', 'Administrar')</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/admin-template/bootstrap/css/bootstrap.min.css" rel="stylesheet">
