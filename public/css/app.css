@@ -17,3 +17,11 @@
 .formulario-login, .formulario-registro {
     margin-top: 70px;
 }
+
+.margen-arriba {
+    margin-top: 30px;
+}
+
+.mini-margen-bot {
+    margin-bottom: 4px;
+}

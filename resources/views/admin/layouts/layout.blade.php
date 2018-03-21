@@ -93,6 +93,18 @@
                     <li>
                         <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
+                    <li>
+                        <a href="#"><i class="fa fa-user fa-fw"></i> Users<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{ route('admin.user') }}">Administrar usuarios</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.user.create') }}">Crear un usuario</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->
@@ -107,6 +119,8 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
+
+        @include('admin.partials.messages')
 
         @yield('content')
 

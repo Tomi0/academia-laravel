@@ -14,6 +14,12 @@ class UsersTableSeeder extends Seeder
     {
         User::truncate();
 
-        factory(User::class, 30)->create();
+        factory(User::class)->create([
+            'name' => 'Tomi',
+            'email' => 'tomi@gmail.com',
+            'verified' => '1'
+        ]);
+
+        factory(User::class, 9)->create();
     }
 }

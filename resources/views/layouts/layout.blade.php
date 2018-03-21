@@ -51,7 +51,10 @@
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('/') ? 'active' : '' }}" href="{{ route('pages.home') }}">Inicio</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger " href="{{ route('pages.about') }}">Cursos</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('course') || Request::is('course/*') ? 'active' : '' }}" href="{{ route('course') }}">Cursos</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger " href="#">Blog</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
                         <form action="{{ route('logout') }}" method="POST">
@@ -66,16 +69,16 @@
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('/') ? 'active' : '' }}" href="{{ route('pages.home') }}">Inicio</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('/about') ? 'active' : '' }}" href="{{ route('pages.about') }}">Sobre nosotros</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('about') ? 'active' : '' }}" href="{{ route('pages.about') }}">Sobre nosotros</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('/contact') ? 'active' : '' }}" href="{{ route('pages.contact') }}">Contacto</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('contact') ? 'active' : '' }}" href="{{ route('pages.contact') }}">Contacto</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('/login') ? 'active' : '' }}" href="{{ route('login') }}">Iniciar sesión</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('login') ? 'active' : '' }}" href="{{ route('login') }}">Iniciar sesión</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('/register') ? 'active' : '' }}" href="{{ route('register') }}">Registrarse</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('register') ? 'active' : '' }}" href="{{ route('register') }}">Registrarse</a>
                     </li>
 
                 @endif
