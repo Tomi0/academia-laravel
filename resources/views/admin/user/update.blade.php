@@ -47,22 +47,12 @@
 
                                 <div class="form-group  {{ $errors->has('password') ? 'has-error' : '' }}">
                                     <label class="control-label" for="password">Contraseña</label>
-                                    <input type="password" id="password" name="password" class="form-control" placeholder="introduce contraseña" disabled>
+                                    <input type="password" id="password" name="password" class="form-control" placeholder="introduce contraseña">
                                     {!! $errors->first('password', '<span class="help-block">:message</span>') !!}
                                 </div>
 
                             </div>
-                            <div class="col-lg-6">
 
-                                <div class="form-group  {{ $errors->has('password') ? 'has-error' : '' }}">
-                                    <label class="control-label" for="password-confirmation">Confirmar contraseña</label>
-                                    <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" disabled placeholder="introduce la contraseña de nuevo">
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Verificado</label>
@@ -72,6 +62,7 @@
                                     </select>
                                 </div>
                             </div>
+
                         </div>
 
                         <div class="row">
