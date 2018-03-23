@@ -8,7 +8,7 @@
 
     <section class="margen-arriba-grande">
         <div class="container text-center">
-            <h1>Ups! La página a la que intentas acceder no existe</h1>
+            <h1>Forbidden! No tienes acceso para entrar a esta página. Para más detalles contacta con el administrador.</h1>
         </div>
     </section>
 

@@ -41,100 +41,100 @@ class CourseTableSeeder extends Seeder
 
         // PRIMARIA
         $category = new Course();
-        $category->name = 'Primero';
+        $category->name = 'Primero de primaria';
         $category->slug = str_slug($category->name);
         $category->course_id = 1;
         $category->save();
 
         $category = new Course();
-        $category->name = 'Segundo';
+        $category->name = 'Segundo de primaria';
         $category->slug = str_slug($category->name);
         $category->course_id = 1;
         $category->save();
 
         $category = new Course();
-        $category->name = 'Tercero';
+        $category->name = 'Tercero de primaria';
         $category->slug = str_slug($category->name);
         $category->course_id = 1;
         $category->save();
 
         $category = new Course();
-        $category->name = 'Cuarto';
+        $category->name = 'Cuarto de primaria';
         $category->slug = str_slug($category->name);
         $category->course_id = 1;
         $category->save();
 
         $category = new Course();
-        $category->name = 'Quinto';
+        $category->name = 'Quinto de primaria';
         $category->slug = str_slug($category->name);
         $category->course_id = 1;
         $category->save();
 
         $category = new Course();
-        $category->name = 'Sexto';
+        $category->name = 'Sexto de primaria';
         $category->slug = str_slug($category->name);
         $category->course_id = 1;
         $category->save();
 
         // ESO
         $category = new Course();
-        $category->name = 'Primero';
+        $category->name = 'Primero de ESO';
         $category->slug = str_slug($category->name);
         $category->course_id = 2;
         $category->save();
 
         $category = new Course();
-        $category->name = 'Segundo';
+        $category->name = 'Segundo de ESO';
         $category->slug = str_slug($category->name);
         $category->course_id = 2;
         $category->save();
 
         $category = new Course();
-        $category->name = 'Tercero';
+        $category->name = 'Tercero de ESO';
         $category->slug = str_slug($category->name);
         $category->course_id = 2;
         $category->save();
 
         $category = new Course();
-        $category->name = 'Cuarto';
+        $category->name = 'Cuarto de ESO';
         $category->slug = str_slug($category->name);
         $category->course_id = 2;
         $category->save();
 
         // BACHILLER
         $category = new Course();
-        $category->name = 'Primero';
+        $category->name = 'Primero de bachiller';
         $category->slug = str_slug($category->name);
         $category->course_id = 3;
         $category->save();
 
         $category = new Course();
-        $category->name = 'Segundo';
+        $category->name = 'Segundo de bachiller';
         $category->slug = str_slug($category->name);
         $category->course_id = 3;
         $category->save();
 
         // UNIVERSIDAD
         $category = new Course();
-        $category->name = 'Primero';
+        $category->name = 'Primero de carrera';
         $category->slug = str_slug($category->name);
         $category->course_id = 5;
         $category->save();
 
         $category = new Course();
-        $category->name = 'Segundo';
+        $category->name = 'Segundo de carrera';
         $category->slug = str_slug($category->name);
         $category->course_id = 5;
         $category->save();
 
         $category = new Course();
-        $category->name = 'Tercero';
+        $category->name = 'Tercero de carrera';
         $category->slug = str_slug($category->name);
         $category->course_id = 5;
         $category->save();
 
         $category = new Course();
-        $category->name = 'Cuarto';
+        $category->name = 'Cuarto de carrera';
         $category->slug = str_slug($category->name);
         $category->course_id = 5;
         $category->save();
