@@ -18,8 +18,23 @@ class SubjectController extends Controller
                 'subjectName' => $subject->name
             ]);
         } else {
-            return view('errors.403');
+            return view('subject.matricula', compact('subject'));
+        }
+    }
+
+    public function matricular(Request $request, Subject $subject)
+    {
+        $this->validate($request, [
+            'matricula' => 'required|string|max:10'
+        ]);
+
+        if ($request->matricula === $subject->matricula) {
+            $subject->users()->attach(auth()->user()->id);
+            $subject->save();
+
+
         }
 
+        return redirect()->route('subject', $subject);
     }
 }

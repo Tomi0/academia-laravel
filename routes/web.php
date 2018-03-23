@@ -27,6 +27,7 @@ Route::group([
     'middleware' => ['auth', 'role:alumno|profesor|admin']],
     function () {
         Route::get('/subject/{subject}', 'SubjectController@show')->name('subject');
+        Route::post('/subject/{subject}/matricular', 'SubjectController@matricular')->name('subject.matricular');
     });
 
 

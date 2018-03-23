@@ -29,3 +29,12 @@
 .margen-arriba-grande {
     margin-top: 70px;
 }
+
+.matricula {
+    border: 1px solid black;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 20px;
+    padding-bottom: 0px;
+}
