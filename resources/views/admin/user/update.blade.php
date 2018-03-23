@@ -54,12 +54,16 @@
                             </div>
 
                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label>Verificado</label>
-                                    <select class="form-control" name="verified">
-                                        <option value="1" {{ old('verified', $user->verified) == 1 ? 'selected' : '' }}>Si</option>
-                                        <option value="0" {{ old('verified', $user->verified) == 0 ? 'selected' : '' }}>No</option>
+                                <div class="form-group {{ $errors->has('role') ? 'has-error' : '' }}">
+                                    <label class="control-label">Role: </label>
+                                    <select class="form-control" name="role">
+                                        @foreach($roles as $role)
+
+                                            <option {{ old('role', $user->getRoleNames()[0]) == $role->name ? 'selected' : '' }} value="{{ $role->name }}">{{ $role->name }}</option>
+
+                                        @endforeach
                                     </select>
+                                    {!! $errors->first('role', '<span class="help-block">:message</span>') !!}
                                 </div>
                             </div>
 

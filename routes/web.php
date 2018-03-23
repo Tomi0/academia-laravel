@@ -30,7 +30,7 @@ Route::get('/document/{document}', 'DocumentController@show')->name('document.sh
 Route::group([
     'prefix' => 'admin',
     'namespace' => 'Admin',
-    'middleware' => 'auth'],
+    'middleware' => ['auth', 'role:admin']],
     function () {
         Route::get('/', 'AdminController@index')->name('dashboard');
         Route::get('/user', 'UsersController@index')->name('admin.user');

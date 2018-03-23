@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\Rule;
+use Spatie\Permission\Models\Role;
 
 class UsersController extends Controller
 {
@@ -19,7 +20,9 @@ class UsersController extends Controller
 
     public function create()
     {
-        return view('admin.user.create');
+        $roles = Role::all();
+
+        return view('admin.user.create', compact('roles'));
     }
 
     public function destroy(User $user)
@@ -34,15 +37,16 @@ class UsersController extends Controller
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed'
+            'password' => 'required|string|min:6|confirmed',
+            'role' => ['required', 'regex:/admin|alumno|profesor|invitado/']
         ]);
 
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
-        $user->verified = $request->verified;
+        $user->password = bcrypt($request->password);
         $user->save();
+        $user->assignRole($request->role);
 
         return redirect()->route('admin.user.create')->with('success', 'El usuario ha sido creado con exito.');
     }
@@ -53,7 +57,8 @@ class UsersController extends Controller
             'name' => 'required|string|max:255',
             'email' => ['required', 'string', 'email', Rule::unique('users')->ignore($user->id), 'max:255'],
             'password' => '',
-            'verified' => 'boolean'
+            'verified' => 'boolean',
+            'role' => ['required', 'regex:/admin|alumno|profesor|invitado/']
         ]);
 
         if ($data['password'] != null) {
@@ -62,14 +67,21 @@ class UsersController extends Controller
             unset($data['password']);
         }
 
+        $role = $data['role'];
+        unset($data['role']);
+
         $user->update($data);
+        $user->removeRole($user->getRoleNames()[0]);
+        $user->assignRole($role);
 
         return redirect()->route('admin.user.edit', $user)->with('success', 'El usuario ha sido editado correctamente');
     }
 
     public function edit(User $user)
     {
-        return view('admin.user.update', compact('user'));
+        $roles = Role::all();
+
+        return view('admin.user.update', compact('user', 'roles'));
     }
 
 }

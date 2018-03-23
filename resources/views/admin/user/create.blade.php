@@ -45,7 +45,7 @@
                         <div class="row">
                             <div class="col-lg-6">
 
-                                <div class="form-group  {{ $errors->has('password') ? 'has-error' : '' }}">
+                                <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
                                     <label class="control-label" for="password">Contraseña</label>
                                     <input type="password" id="password" name="password" class="form-control" placeholder="introduce contraseña">
                                     {!! $errors->first('password', '<span class="help-block">:message</span>') !!}
@@ -54,7 +54,7 @@
                             </div>
                             <div class="col-lg-6">
 
-                                <div class="form-group  {{ $errors->has('password') ? 'has-error' : '' }}">
+                                <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
                                     <label class="control-label" for="password-confirmation">Confirmar contraseña</label>
                                     <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="introduce la contraseña de nuevo">
                                 </div>
@@ -64,12 +64,18 @@
 
                         <div class="row">
                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label>Verificado</label>
-                                    <select class="form-control" name="verified">
-                                        <option value="1" {{ old('verified') == 1 ? 'selected' : '' }}>Si</option>
-                                        <option value="0" {{ old('verified') == 0 ? 'selected' : '' }}>No</option>
+                                <div class="form-group {{ $errors->has('role') ? 'has-error' : '' }}">
+                                    <label class="control-label">Rol: </label>
+                                    <select class="form-control" name="role">
+
+                                        @foreach($roles as $role)
+
+                                            <option {{ old('role') == $role->name ? 'selected' : '' }} value="{{ $role->name }}">{{ $role->name }}</option>
+
+                                        @endforeach
+
                                     </select>
+                                    {!! $errors->first('role', '<span class="help-block">:message</span>') !!}
                                 </div>
                             </div>
                         </div>

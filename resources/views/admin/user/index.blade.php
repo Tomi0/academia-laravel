@@ -28,7 +28,7 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Verified</th>
+                                <th>Rol</th>
                                 <th>Acciones</th>
                             </tr>
                             </thead>
@@ -39,7 +39,7 @@
                                 <tr>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td>{{ $user->verified ? 'Si' : 'No' }}</td>
+                                    <td>{{ $user->getRoleNames()[0] }}</td>
                                     <td>
                                         <a href="{{ route('admin.user.edit', $user) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
                                         <form action="{{ route('admin.user.destroy', $user) }}" method="POST" style="display: inline;">
@@ -66,7 +66,7 @@
         <div class="col-lg-6">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    Usuarios sin verificar
+                    Usuarios con rol invitado
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -76,14 +76,14 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Verify</th>
+                                <th>Rol: invitado</th>
                             </tr>
                             </thead>
                             <tbody>
 
                             @foreach($users as $user)
 
-                                @if(!$user->verified)
+                                @if($user->getRoleNames()[0] == 'invitado')
 
                                     <tr>
                                         <td>{{ $user->name }}</td>
