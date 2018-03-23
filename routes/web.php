@@ -16,15 +16,26 @@ Route::get('/', 'PagesController@home')->name('pages.home');
 Route::get('/contact', 'PagesController@contact')->name('pages.contact');
 Route::get('/about', 'PagesController@about')->name('pages.about');
 
+
 // Rutas de los cursos
 Route::get('/course', 'CoursesController@all')->name('course');
 Route::get('/course/{course}', 'CoursesController@show')->name('course.show');
 
+
 // Rutas para las asignaturas
-Route::get('/subject/{subject}', 'SubjectController@show')->name('subject');
+Route::group([
+    'middleware' => ['auth', 'role:alumno|profesor|admin']],
+    function () {
+        Route::get('/subject/{subject}', 'SubjectController@show')->name('subject');
+    });
+
 
 // Rutas para los documentos
-Route::get('/document/{document}', 'DocumentController@show')->name('document.show');
+Route::group([
+    'middleware' => ['auth', 'role:alumno|profesor|admin']],
+    function () {
+        Route::get('/document/{document}', 'DocumentController@show')->name('document.show');
+    });
 
 
 Route::group([
