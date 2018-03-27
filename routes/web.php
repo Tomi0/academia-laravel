@@ -54,12 +54,22 @@ Route::group([
     'middleware' => ['auth', 'role:admin']],
     function () {
         Route::get('/', 'AdminController@index')->name('dashboard');
+
+        // RUTAS DE USUARIOS
         Route::get('/user', 'UsersController@index')->name('admin.user');
         Route::get('/user/create', 'UsersController@create')->name('admin.user.create');
         Route::post('/user', 'UsersController@store')->name('admin.user.store');
         Route::get('/user/{user}', 'UsersController@edit')->name('admin.user.edit');
         Route::put('/user/{user}', 'UsersController@update')->name('admin.user.update');
         Route::delete('/user/{user}', 'UsersController@destroy')->name('admin.user.destroy');
+
+        // RUTAS DE ASIGNATURAS
+        Route::get('/subject', 'SubjectsController@index')->name('admin.subject');
+        Route::get('/subject/create', 'SubjectsController@create')->name('admin.subject.create');
+        Route::get('/subject/{subject}/edit', 'SubjectsController@edit')->name('admin.subject.edit');
+        Route::post('/subject', 'SubjectsController@store')->name('admin.subject.store');
+        Route::put('/subject/{subject}', 'SubjectsController@update')->name('admin.subject.update');
+        Route::delete('/subject/{subject}', 'SubjectsController@destroy')->name('admin.subject.destroy');
     });
 
 Auth::routes();

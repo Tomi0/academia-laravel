@@ -94,13 +94,25 @@
                         <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-user fa-fw"></i> Users<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-user fa-fw"></i> Usuarios<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="{{ route('admin.user') }}">Administrar usuarios</a>
                             </li>
                             <li>
                                 <a href="{{ route('admin.user.create') }}">Crear un usuario</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-user fa-fw"></i> Asignaturas<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{ route('admin.subject') }}">Administrar asignaturas</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.subject.create') }}">Crear una asignatura</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->

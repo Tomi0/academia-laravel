@@ -33,7 +33,7 @@ class SubjectController extends Controller
 
     public function edit(Subject $subject)
     {
-        if ($subject->user_id === auth()->user()->id || auth()->user()->getRoleNames()[0] === 'admin') {
+        if ($subject->user_id === auth()->user()->id) {
             return view('subject.edit', compact('subject'));
         } else {
             abort(404);

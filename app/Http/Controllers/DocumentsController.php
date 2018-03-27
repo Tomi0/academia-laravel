@@ -20,7 +20,7 @@ class DocumentsController extends Controller
 
     public function destroy(Document $document)
     {
-        if ($document->subject->user_id == auth()->user()->id || auth()->user()->getRoleNames()[0] === 'admin') {
+        if ($document->subject->user_id == auth()->user()->id) {
             $document->delete();
 
             return redirect()->back()->with('success', 'Documento eliminado');
