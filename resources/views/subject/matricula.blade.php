@@ -6,34 +6,33 @@
 
 @section('content')
 
-    <section class="margen-arriba-grande">
-        <div class="container">
+    <div class="container">
 
-            <h3>Necesitas una clave para poder entrar en la asignatura</h3>
+        <h3>Necesitas una clave para poder entrar en la asignatura</h3>
 
-                <div class="matricula margen-arriba">
+            <div class="matricula margen-arriba">
 
-                    <form action="{{ route('subject.matricular', $subject) }}" method="POST">
+                <form action="{{ route('subject.matricular', $subject) }}" method="POST">
 
-                        {{ csrf_field() }}
+                    {{ csrf_field() }}
 
-                        <div class="row form-group">
+                    <div class="row form-group {{ isset($fallo) ? 'has-errors' : '' }}">
 
-                            <label class="control-label col-md-2" for="matricula">Clave: </label>
+                        <label class="control-label col-md-2" for="matricula">Clave: </label>
 
-                            <input type="password" name="matricula" class="form-control col-md-6" placeholder="clave de la asignatura" id="matricula">
+                        <input type="password" name="matricula" class="form-control col-md-6" placeholder="clave de la asignatura" id="matricula">
 
-                        </div>
+                    </div>
 
-                        <div class="row form-group">
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                        </div>
+                    {!! $errors->first('matricula', '<p><span class="help-block text-danger">:message</span></p>') !!}
 
-                    </form>
+                    <div class="row form-group">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
 
-                </div>
+                </form>
 
-        </div>
-    </section>
+            </div>
+    </div>
 
 @endsection

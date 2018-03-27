@@ -29,7 +29,7 @@
                                 <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                                     <label class="control-label" for="name">Nombre</label>
                                     <input type="text" id="name" name="name" class="form-control" placeholder="introduce el nombre" value="{{ old('name') }}">
-                                    {!! $errors->first('name', '<span class="help-block">:message</span>') !!}
+                                    {!! $errors->first('name', '<span class="help-block text-danger">:message</span>') !!}
                                 </div>
 
                             </div>
@@ -38,7 +38,7 @@
                                 <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
                                     <label class="control-label" for="email">Email</label>
                                     <input type="email" id="email" name="email" class="form-control" placeholder="introduce el email" value="{{ old('email') }}">
-                                    {!! $errors->first('email', '<span class="help-block">:message</span>') !!}
+                                    {!! $errors->first('email', '<span class="help-block text-danger">:message</span>') !!}
                                 </div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                                 <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
                                     <label class="control-label" for="password">Contraseña</label>
                                     <input type="password" id="password" name="password" class="form-control" placeholder="introduce contraseña">
-                                    {!! $errors->first('password', '<span class="help-block">:message</span>') !!}
+                                    {!! $errors->first('password', '<span class="help-block text-danger">:message</span>') !!}
                                 </div>
 
                             </div>
@@ -75,7 +75,7 @@
                                         @endforeach
 
                                     </select>
-                                    {!! $errors->first('role', '<span class="help-block">:message</span>') !!}
+                                    {!! $errors->first('role', '<span class="help-block text-danger">:message</span>') !!}
                                 </div>
                             </div>
                         </div>

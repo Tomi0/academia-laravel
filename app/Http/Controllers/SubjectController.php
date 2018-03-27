@@ -10,13 +10,8 @@ class SubjectController extends Controller
 {
     public function show(Subject $subject)
     {
-        if (isset(auth()->user()->subjects()->where('subject_id', $subject->id)->get()[0])) {
-            $docs = Document::where('subject_id', $subject->id)->get();
-
-            return view('subject.show',  [
-                'docs' => $docs,
-                'subjectName' => $subject->name
-            ]);
+        if (isset(auth()->user()->subjects()->where('subject_id', $subject->id)->get()[0]) || $subject->user_id === auth()->user()->id) {
+            return view('subject.show', compact('subject'));
         } else {
             return view('subject.matricula', compact('subject'));
         }
@@ -31,10 +26,17 @@ class SubjectController extends Controller
         if ($request->matricula === $subject->matricula) {
             $subject->users()->attach(auth()->user()->id);
             $subject->save();
-
-
         }
 
         return redirect()->route('subject', $subject);
+    }
+
+    public function edit(Subject $subject)
+    {
+        if ($subject->user_id === auth()->user()->id || auth()->user()->getRoleNames()[0] === 'admin') {
+            return view('subject.edit', compact('subject'));
+        } else {
+            abort(404);
+        }
     }
 }

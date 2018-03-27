@@ -8,36 +8,52 @@
 
 @section('content')
 
-    <section>
-        <div class="container">
+    <div class="container">
 
-            @if(isset($courses) && count($courses) > 0)
+        @if(isset($courses) && count($courses) > 0)
+
+
+
+            @if(isset($course->name))
+
+                <h2>{{ $course->name }}</h2>
+
+            @else
 
                 <h2>Cursos disponibles:</h2>
 
-                <div class="list-group margen-arriba">
-                    @foreach($courses as $course)
+            @endif
 
-                        <a href="{{ route('course.show', $course) }}" class="list-group-item list-group-item-action" href="#">{{ $course->name }}</a>
+            <div class="list-group margen-arriba">
+                @foreach($courses as $course)
 
-                    @endforeach
-                </div>
+                    <a href="{{ route('course.show', $course) }}" class="list-group-item list-group-item-action" href="#">{{ $course->name }}</a>
+
+                @endforeach
+            </div>
+
+        @else
+
+            @if(isset($course->name))
+
+                <h2>Asignaturas en {{ $course->name }}</h2>
 
             @else
 
                 <h2>Asignaturas:</h2>
 
-                <div class="list-group margen-arriba">
-                    @foreach($subjects as $subject)
-
-                        <a href="{{ route('subject', $subject) }}" class="list-group-item list-group-item-action">{{ $subject->name }}</a>
-
-                    @endforeach
-                </div>
-
             @endif
 
-        </div>
-    </section>
+            <div class="list-group margen-arriba">
+                @foreach($subjects as $subject)
+
+                    <a href="{{ route('subject', $subject) }}" class="list-group-item list-group-item-action">{{ $subject->name }}</a>
+
+                @endforeach
+            </div>
+
+        @endif
+
+    </div>
 
 @endsection

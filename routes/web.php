@@ -30,12 +30,21 @@ Route::group([
         Route::post('/subject/{subject}/matricular', 'SubjectController@matricular')->name('subject.matricular');
     });
 
+// Rutas para editar asignaturas y agregar o eliminar documentos a las asignaturas
+Route::group([
+    'middleware' => ['auth', 'role:profesor|admin']],
+    function () {
+        Route::get('/subject/{subject}/edit', 'SubjectController@edit')->name('subject.edit');
+    });
+
 
 // Rutas para los documentos
 Route::group([
     'middleware' => ['auth', 'role:alumno|profesor|admin']],
     function () {
-        Route::get('/document/{document}', 'DocumentController@show')->name('document.show');
+        Route::get('/document/{document}', 'DocumentsController@show')->name('document.show');
+        Route::post('/document/{subject}', 'DocumentsController@store')->name('document.store');
+        Route::delete('/document/{document}', 'DocumentsController@destroy')->name('document.delete');
     });
 
 

@@ -19,7 +19,6 @@ class CreateDocumentsTable extends Migration
             $table->mediumText('description')->nullable();
             $table->string('url');
             $table->unsignedInteger('subject_id');
-            $table->unsignedInteger('user_id');
             $table->timestamps();
         });
     }

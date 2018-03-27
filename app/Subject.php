@@ -12,4 +12,14 @@ class Subject extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+
+    public function documents()
+    {
+        return $this->hasMany(Document::class);
+    }
+
 }

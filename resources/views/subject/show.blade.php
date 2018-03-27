@@ -1,34 +1,34 @@
 @extends('layouts.layout')
 
 @section('meta-title')
-    {{ $subjectName }}
+    {{ $subject->name }}
 @endsection
 
 @section('content')
 
-    <section>
-        <div class="container">
+    <div class="container">
 
-            <h2>{{ $subjectName }}</h2>
+        <h2>{{ $subject->course->name }}: {{ $subject->name }}</h2>
 
-            @if(isset($docs) && count($docs) > 0)
+        @if(auth()->user()->getRoleNames()[0] === 'admin' || auth()->user()->getRoleNames()[0] === 'profesor')
+            <a href="{{ route('subject.edit', $subject) }}" class="btn btn-secondary">Editar asignatura</a>
+        @endif
 
+        @if(isset($subject->documents) && count($subject->documents) > 0)
 
+            <div class="list-group margen-arriba">
+                @foreach($subject->documents as $doc)
 
-                <div class="list-group margen-arriba">
-                    @foreach($docs as $doc)
+                    <a href="{{ route('document.show', $doc) }}" class="list-group-item list-group-item-action">{{ $doc->name }}</a>
 
-                        <a href="{{ route('document.show', $doc) }}" class="list-group-item list-group-item-action">{{ $doc->name }}</a>
+                @endforeach
+            </div>
 
-                    @endforeach
-                </div>
+        @else
 
-            @else
+            <h3 class="margen-arriba">No hay documentos en esta asignatura</h3>
 
-                <h3>No hay documentos en esta asignatura</h3>
-
-            @endif
-        </div>
-    </section>
+        @endif
+    </div>
 
 @endsection

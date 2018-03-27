@@ -28,9 +28,9 @@ class CoursesController extends Controller
 
         if (!isset($courses[0])) {
             $subjects = Subject::where('course_id', $course->id)->get();
-            return view('course.show', compact('subjects'));
+            return view('course.show', compact('subjects', 'course'));
         }
 
-        return view('course.show',compact('courses'));
+        return view('course.show',compact('courses', 'course'));
     }
 }
