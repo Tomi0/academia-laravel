@@ -31,7 +31,7 @@ class DocumentsController extends Controller
 
         $this->validate($request, [
             'name' => 'required|string|max:50',
-            'description' => 'required|max:200',
+            'description' => 'max:200',
             'document-file' => 'required|mimes:pdf'
         ]);
 

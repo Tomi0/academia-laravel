@@ -12,7 +12,7 @@
 
     <div class="panel panel-primary">
         <div class="panel-heading">
-            Todos los usuarios
+            Todas las asignaturas
         </div>
         <!-- /.panel-heading -->
         <div class="panel-body">
@@ -22,6 +22,7 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Pertenece a</th>
+                        <th>Profesor</th>
                         <th>Matriculados</th>
                         <th>Acciones</th>
                     </tr>
@@ -33,6 +34,7 @@
                         <tr>
                             <td>{{ $subject->name }}</td>
                             <td>{{ $subject->course->name }}</td>
+                            <td>{{ $subject->user->name }}</td>
                             <td>{{ count($subject->users) }}</td>
                             <td>
                                 <a href="{{ route('admin.subject.edit', $subject) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>

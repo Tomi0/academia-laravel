@@ -43,13 +43,7 @@ class SubjectsController extends Controller
             'user_id' => 'required'
         ]);
 
-        $subject = new Subject();
-        $subject->name = $request->name;
-        $subject->course_id = $request->course_id;
-        $subject->user_id = $request->user_id;
-        $subject->matricula = str_random(10);
-
-        $subject->save();
+        Subject::create($request->all());
 
         return redirect()->back()->with('success', 'Asignatura creada con exito');
     }

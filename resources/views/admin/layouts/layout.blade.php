@@ -106,7 +106,7 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-user fa-fw"></i> Asignaturas<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-folder-open fa-fw"></i> Asignaturas<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="{{ route('admin.subject') }}">Administrar asignaturas</a>
@@ -116,6 +116,9 @@
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.document') }}"><i class="fa fa-file-text fa-fw"></i> Documentos</a>
                     </li>
                 </ul>
             </div>

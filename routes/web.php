@@ -70,6 +70,10 @@ Route::group([
         Route::post('/subject', 'SubjectsController@store')->name('admin.subject.store');
         Route::put('/subject/{subject}', 'SubjectsController@update')->name('admin.subject.update');
         Route::delete('/subject/{subject}', 'SubjectsController@destroy')->name('admin.subject.destroy');
+
+        // RUTAS DE ADMINISTRACIÓN DE DOCUMENTOS
+        Route::get('/document', 'DocumentsController@index')->name('admin.document');
+        Route::post('/document', 'DocumentsController@store')->name('admin.document.store');
     });
 
 Auth::routes();

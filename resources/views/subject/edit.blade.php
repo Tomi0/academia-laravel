@@ -68,26 +68,26 @@
             <form action="{{ route('document.store', $subject) }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
 
-                <div class="form-group">
+                <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                     <label for="name">Nombre</label>
                     <input type="text" name="name" id="name" class="form-control" placeholder="nombre del documento" value="{{ old('name') }}">
                     {!! $errors->first('name', '<span class="help-block text-danger">:message</span>') !!}
                 </div>
 
-                <div class="form-group">
+                <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
                     <label for="description">Descripción</label>
                     <textarea type="text" name="description" id="description" class="form-control" placeholder="descripción del documento">{{ old('description') }}</textarea>
                     {!! $errors->first('description', '<span class="help-block text-danger">:message</span>') !!}
                 </div>
 
-                <div class="form-group">
+                <div class="form-group {{ $errors->has('document-file') ? 'has-error' : '' }}">
                     <label for="exampleFormControlFile1">Documento</label>
                     <input type="file" class="form-control-file" name="document-file" id="exampleFormControlFile1">
                     {!! $errors->first('document-file', '<span class="help-block text-danger">:message</span>') !!}
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary">Crear documento</button>
                 </div>
 
             </form>

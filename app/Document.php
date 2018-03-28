@@ -29,7 +29,11 @@ class Document extends Model
     public static function create(array $attributes = [])
     {
         $attributes['url'] = request()->file('document-file')->store('documents','public');
-        $attributes['subject_id'] = request()->subject->id;
+
+        if (!isset($attributes['subject_id'])) {
+            $attributes['subject_id'] = request()->subject->id;
+        }
+
         unset($attributes['document-file']);
 
         $doc = static::query()->create($attributes);
