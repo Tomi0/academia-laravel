@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Document extends Model
 {
-    protected $fillable = ['url'];
+    protected $fillable = ['name', 'description', 'subject_id', 'url'];
 
     public function subject()
     {
@@ -24,6 +24,17 @@ class Document extends Model
             // Borra el fichero
             Storage::disk('public')->delete($document->url);
         });
+    }
+
+    public static function create(array $attributes = [])
+    {
+        $attributes['url'] = request()->file('document-file')->store('documents','public');
+        $attributes['subject_id'] = request()->subject->id;
+        unset($attributes['document-file']);
+
+        $doc = static::query()->create($attributes);
+
+        return $doc;
     }
 
 }

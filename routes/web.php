@@ -43,11 +43,11 @@ Route::group([
     'middleware' => ['auth', 'role:alumno|profesor|admin']],
     function () {
         Route::get('/document/{document}', 'DocumentsController@show')->name('document.show');
-        Route::post('/document/{subject}', 'DocumentsController@store')->name('document.store');
+        Route::post('/document/{subject}/store', 'DocumentsController@store')->name('document.store');
         Route::delete('/document/{document}', 'DocumentsController@destroy')->name('document.delete');
     });
 
-
+// RUTAS DE ADMINISTRACIÓN
 Route::group([
     'prefix' => 'admin',
     'namespace' => 'Admin',

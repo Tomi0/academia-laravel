@@ -11,39 +11,31 @@ class DocumentsController extends Controller
 {
     public function show(Document $document)
     {
-        if (isset(auth()->user()->subjects()->where('subject_id', $document->subject->id)->get()[0]) || $document->subject()->user_id === auth()->user()->id) {
-            return response()->file('/var/www/academia/storage/app/public/' . $document->url);
-        } else {
-            abort(403);
-        }
+        $this->authorize('view', $document);
+
+        return response()->file('/var/www/academia/storage/app/public/' . $document->url);
     }
 
     public function destroy(Document $document)
     {
-        if ($document->subject->user_id == auth()->user()->id) {
-            $document->delete();
+        $this->authorize('delete', $document);
 
-            return redirect()->back()->with('success', 'Documento eliminado');
-        } else {
-            abort(404);
-        }
+        $document->delete();
+
+        return redirect()->back()->with('success', 'Documento eliminado');
     }
 
     public function store(Request $request, Subject $subject)
     {
+        //$this->authorize('create');
+
         $this->validate($request, [
             'name' => 'required|string|max:50',
             'description' => 'required|max:200',
             'document-file' => 'required|mimes:pdf'
         ]);
 
-        $doc = new Document();
-        $doc->name = $request->name;
-        $doc->description = $request->description;
-        $doc->subject_id = $subject->id;
-        $doc->url = request()->file('document-file')->store('documents','public');
-
-        $doc->save();
+        Document::create($request->all());
 
         return redirect()->back()->with('success', 'Documento guardado');
     }
