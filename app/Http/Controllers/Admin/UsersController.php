@@ -38,15 +38,10 @@ class UsersController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            'role' => ['required', 'regex:/admin|alumno|profesor|invitado/']
+            'role' => 'required|exists:roles,id'
         ]);
 
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-        $user->save();
-        $user->assignRole($request->role);
+        User::create($request->all())->assignRole(Role::where('id', $request->role)->get());
 
         return redirect()->route('admin.user.create')->with('success', 'El usuario ha sido creado con exito.');
     }
@@ -57,8 +52,7 @@ class UsersController extends Controller
             'name' => 'required|string|max:255',
             'email' => ['required', 'string', 'email', Rule::unique('users')->ignore($user->id), 'max:255'],
             'password' => '',
-            'verified' => 'boolean',
-            'role' => ['required', 'regex:/admin|alumno|profesor|invitado/']
+            'role' => 'required|exists:roles,id'
         ]);
 
         if ($data['password'] != null) {
@@ -72,7 +66,7 @@ class UsersController extends Controller
 
         $user->update($data);
         $user->removeRole($user->getRoleNames()[0]);
-        $user->assignRole($role);
+        $user->assignRole(Role::where('id', $role)->get());
 
         return redirect()->route('admin.user.edit', $user)->with('success', 'El usuario ha sido editado correctamente');
     }

@@ -32,4 +32,13 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Subject::class);
     }
+
+    public static function create(array $attributes = [])
+    {
+        $attributes['password'] = bcrypt($attributes['password']);
+
+        $user = static::query()->create($attributes);
+
+        return $user;
+    }
 }
