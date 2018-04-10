@@ -78,4 +78,11 @@ class UsersController extends Controller
         return view('admin.user.update', compact('user', 'roles'));
     }
 
+    public function matricula()
+    {
+        $users = User::all();
+
+        return view('admin.user.matricula', compact('users'));
+    }
+
 }

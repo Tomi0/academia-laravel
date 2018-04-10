@@ -63,6 +63,9 @@ Route::group([
         Route::put('/user/{user}', 'UsersController@update')->name('admin.user.update');
         Route::delete('/user/{user}', 'UsersController@destroy')->name('admin.user.destroy');
 
+        // Matriculas de usuarios
+        Route::get('/matricula', 'UsersController@matricula')->name('admin.matricula');
+
         // RUTAS DE ASIGNATURAS
         Route::get('/subject', 'SubjectsController@index')->name('admin.subject');
         Route::get('/subject/create', 'SubjectsController@create')->name('admin.subject.create');

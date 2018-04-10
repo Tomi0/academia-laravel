@@ -25,6 +25,7 @@
 
     <!-- Morris Charts CSS -->
     <link href="/admin-template/morrisjs/morris.css" rel="stylesheet">
+    @stack('styles')
 
     <!-- Custom Fonts -->
     <link href="/admin-template/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -120,6 +121,9 @@
                     <li>
                         <a href="{{ route('admin.document') }}"><i class="fa fa-file-text fa-fw"></i> Documentos</a>
                     </li>
+                    <li>
+                        <a href="{{ route('admin.matricula') }}"><i class="fa fa-book fa-fw"></i> Matricular usuarios</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->
@@ -161,6 +165,8 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="/admin-template/dist/js/sb-admin-2.js"></script>
+
+@stack('scripts')
 
 </body>
 
