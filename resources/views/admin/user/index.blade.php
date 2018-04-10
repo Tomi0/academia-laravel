@@ -95,11 +95,11 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>
-                                            <a href="{{ route('admin.user.update', $user) }}" class="btn btn-info btn-circle mini-margen-bot">
+                                            <a href="{{ route('admin.user.update', $user) }}" class="btn btn-xs btn-info btn-circle">
                                                 <i class="fa fa-check"></i>
                                             </a>
 
-                                            <form action="{{ route('admin.user.destroy', $user) }}" method="POST">
+                                            <form action="{{ route('admin.user.destroy', $user) }}" method="POST" style="display: inline;">
                                                 {{ csrf_field() }} {{ method_field('DELETE') }}
                                                 <button href="{{ route('admin.user.destroy', $user) }}" class="btn btn-warning btn-circle" onclick="return confirm('El usuario no verificado será eliminado, ¿Está seguro?')">
                                                     <i class="fa fa-times"></i>

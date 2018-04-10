@@ -21,7 +21,7 @@
 
                     @if(isset($subject->documents) && count($subject->documents) > 0)
 
-                        <table class="table">
+                        <table class="table text-center">
 
                             <tr>
                                 <th>Nombre</th>
@@ -36,12 +36,12 @@
                                     <td>{{ $document->description }}</td>
                                     <td>
 
-                                        <a href="{{ route('document.show', $document) }}" target="_blank" class="btn btn-xs btn-primary mini-margen-bot float-left">Ver</a>
+                                        <a href="{{ route('document.show', $document) }}" target="_blank" class="btn btn-xs btn-primary mini-margen-bot">Ver</a>
 
-                                        <form action="{{ route('document.delete', $document) }}" method="POST">
+                                        <form action="{{ route('document.delete', $document) }}" method="POST" style="display: inline;">
                                             {{ csrf_field() }} {{ method_field('DELETE') }}
 
-                                            <button href="{{ route('document.show', $document) }}" class="btn btn-xs btn-danger" style="margin-left: 5px" onclick="return confirm('¿Seguro que quire eliminar el documento?');">Eliminar</button>
+                                            <button href="{{ route('document.show', $document) }}" class="btn btn-xs btn-danger" onclick="return confirm('¿Seguro que quire eliminar el documento?');">Eliminar</button>
 
                                         </form>
 

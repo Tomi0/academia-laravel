@@ -30,7 +30,9 @@
                         <thead>
                         <tr>
                             <th>NOMBRE</th>
+                            <th>EMAIL</th>
                             <th>ROL</th>
+                            <th>ACCIONES</th>
                         </tr>
                         </thead>
 
@@ -40,7 +42,13 @@
 
                             <tr>
                                 <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
                                 <td>{{ $user->getRoleNames()[0] }}</td>
+                                <td>
+
+
+
+                                </td>
                             </tr>
 
                         @endforeach
