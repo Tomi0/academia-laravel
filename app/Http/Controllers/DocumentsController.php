@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Document;
 use App\Subject;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -27,7 +28,10 @@ class DocumentsController extends Controller
 
     public function store(Request $request, Subject $subject)
     {
-        //$this->authorize('create');
+        try {
+            $this->authorize('create', $subject);
+        } catch (AuthorizationException $e) {
+        }
 
         $this->validate($request, [
             'name' => 'required|string|max:50',

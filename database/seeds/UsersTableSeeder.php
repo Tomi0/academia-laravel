@@ -21,23 +21,23 @@ class UsersTableSeeder extends Seeder
         $invitadoRol = Role::create(['name' => 'invitado']);
 
         factory(User::class)->create([
-            'name' => 'Tomi',
-            'email' => 'tomi@gmail.com',
+            'name' => 'Admin1',
+            'email' => 'admin@gmail.com',
         ])->assignRole($adminRol);
 
         factory(User::class)->create([
-            'name' => 'Tomip',
-            'email' => 'tomip@gmail.com',
+            'name' => 'Profesor1',
+            'email' => 'profesor@gmail.com',
         ])->assignRole($profesorRol);
 
         factory(User::class)->create([
-            'name' => 'Tomia',
-            'email' => 'tomia@gmail.com',
+            'name' => 'Alumno1',
+            'email' => 'alu@gmail.com',
         ])->assignRole($alumnoRol);
 
         factory(User::class)->create([
-            'name' => 'Tomii',
-            'email' => 'tomii@gmail.com',
+            'name' => 'Invitado1',
+            'email' => 'invitado@gmail.com',
         ])->assignRole($invitadoRol);
 
         factory(User::class, 6)->create()->each->assignRole($alumnoRol);

@@ -38,7 +38,9 @@ class DocumentPolicy
      */
     public function create(User $user, Subject $subject)
     {
-        return $user->hasRole('profesor') && $subject->user_id == $user->id;
+        return true;
+
+        //return $user->hasRole('profesor') && $subject->user_id == $user->id;
     }
 
     /**
