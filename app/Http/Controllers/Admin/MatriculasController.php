@@ -18,6 +18,10 @@ class MatriculasController extends Controller
 
     public function edit(User $user)
     {
+        if (!$user->hasRole('alumno')) {
+            return redirect()->route('admin.matricula')->with('fail', 'Solo se pueden matricular a usuarios con el rol alumno');
+        }
+
         // un array con el id de las asignaturas a las que se encuentra matriculado
         $userSubjectsId = array();
         foreach ($user->subjects as $subject) {

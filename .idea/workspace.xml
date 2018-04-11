@@ -2,60 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f05f8e83-851c-44ed-85f7-c1bf426bb554" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables-plugins/dataTables.bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables-plugins/dataTables.bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables-plugins/dataTables.bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables-plugins/dataTables.bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables-plugins/dataTables.bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables-plugins/dataTables.bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables-plugins/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables-plugins/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables-responsive/dataTables.responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables-responsive/dataTables.responsive.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables-responsive/dataTables.responsive.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables-responsive/dataTables.responsive.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables-responsive/dataTables.responsive.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables-responsive/dataTables.responsive.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.bootstrap4.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.bootstrap4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.bootstrap4.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.bootstrap4.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.foundation.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.foundation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.foundation.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.foundation.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.jqueryui.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.jqueryui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.jqueryui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.jqueryui.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.material.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.material.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.material.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.material.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.semanticui.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.semanticui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.semanticui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.semanticui.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.uikit.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.uikit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.uikit.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/dataTables.uikit.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/jquery.dataTables.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/jquery.dataTables.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/jquery.dataTables.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/jquery.dataTables.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/css/jquery.dataTables_themeroller.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/css/jquery.dataTables_themeroller.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/images/Sorting icons.psd" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/images/Sorting icons.psd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/images/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/images/sort_asc.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/images/sort_asc.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/images/sort_asc_disabled.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/images/sort_asc_disabled.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/images/sort_both.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/images/sort_both.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/images/sort_desc.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/images/sort_desc.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/images/sort_desc_disabled.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/images/sort_desc_disabled.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.bootstrap4.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.bootstrap4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.bootstrap4.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.bootstrap4.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.foundation.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.foundation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.foundation.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.foundation.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.jqueryui.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.jqueryui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.jqueryui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.jqueryui.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.material.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.material.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.material.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.material.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.semanticui.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.semanticui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.semanticui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.semanticui.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.uikit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.uikit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.uikit.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/dataTables.uikit.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/jquery.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/jquery.dataTables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/jquery.dataTables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/jquery.dataTables.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin-template/datatables/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin-template/datatables/js/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/document/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/document/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/messages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/messages.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/matricula.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/matricula/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MatriculasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MatriculasController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/subject/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subject/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blog/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/app/Post.php" afterDir="false" />
     </list>
@@ -84,19 +32,28 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SubjectController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="720">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatriculasController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MatriculasController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/MatriculasController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
+            <state relative-caret-position="378">
+              <caret line="21" column="128" selection-start-line="21" selection-start-column="128" selection-end-line="21" selection-end-column="128" />
               <folding>
                 <element signature="e#46#62#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/subject/show.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -105,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/admin/partials/messages.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -178,7 +135,6 @@
         <option value="$PROJECT_DIR$/public/css/app.css" />
         <option value="$PROJECT_DIR$/resources/views/admin/subject/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/subject/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/subject/show.blade.php" />
         <option value="$PROJECT_DIR$/database/seeds/SubjectTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/SubjectsController.php" />
@@ -203,6 +159,7 @@
         <option value="$PROJECT_DIR$/resources/views/admin/matricula/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/partials/messages.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/MatriculasController.php" />
+        <option value="$PROJECT_DIR$/resources/views/subject/show.blade.php" />
       </list>
     </option>
   </component>
@@ -332,32 +289,6 @@
             <path>
               <item name="academia" type="b2602c69:ProjectViewProjectNode" />
               <item name="academia" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="academia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="academia" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="academia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="academia" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="academia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="academia" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="academia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="academia" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -371,23 +302,7 @@
               <item name="academia" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="academia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="academia" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="partials" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="academia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="academia" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="subject" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -462,12 +377,12 @@
       <workItem from="1523360067243" duration="129000" />
       <workItem from="1523360224516" duration="1140000" />
       <workItem from="1523366894641" duration="6053000" />
-      <workItem from="1523443944665" duration="9731000" />
+      <workItem from="1523443944665" duration="10999000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116294000" />
+    <option name="totallyTimeSpent" value="117562000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
@@ -635,13 +550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/subject/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -832,24 +740,31 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SubjectController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/partials/messages.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/MatriculasController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
+        <state relative-caret-position="378">
+          <caret line="21" column="128" selection-start-line="21" selection-start-column="128" selection-end-line="21" selection-end-column="128" />
           <folding>
             <element signature="e#46#62#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/subject/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
         </state>
       </provider>
     </entry>

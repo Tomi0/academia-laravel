@@ -16,12 +16,25 @@
 
         @if(isset($subject->documents) && count($subject->documents) > 0)
 
-            <div class="list-group margen-arriba">
-                @foreach($subject->documents as $doc)
+            <div class="card margen-arriba">
+                <div class="card-header">
+                    Documentos de la asignatura:
+                </div>
+                <div class="card-body">
 
-                    <a href="{{ route('document.show', $doc) }}" class="list-group-item list-group-item-action">{{ $doc->name }}</a>
+                    @foreach($subject->documents as $doc)
 
-                @endforeach
+                        <p><a href="{{ route('document.show', $doc) }}" target="_blank">{{ $doc->name }}</a></p>
+
+                        <p>{{ $doc->description }}</p>
+
+                        <a href="{{ route('document.show', $doc) }}" target="_blank" class="btn btn-primary">Ver documento</a>
+
+                        <hr />
+
+                    @endforeach
+
+                </div>
             </div>
 
         @else
