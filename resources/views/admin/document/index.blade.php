@@ -112,7 +112,7 @@
                                         <tr>
                                             <td>{{ $document->name }}</td>
                                             <td>
-                                                <a href="{{ route('document.show', $document) }}" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i></a>
+                                                <a href="{{ route('document.show', $document) }}" target="_blank" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i></a>
                                             </td>
                                             <td>
                                                 <form action="{{ route('document.delete', $document) }}" method="POST">

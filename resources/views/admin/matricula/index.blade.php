@@ -46,7 +46,7 @@
                                 <td>{{ $user->getRoleNames()[0] }}</td>
                                 <td>
 
-
+                                    <a href="{{ route('admin.matricula.edit', $user) }}" class="btn btn-primary">Modificar matriculas</a>
 
                                 </td>
                             </tr>
