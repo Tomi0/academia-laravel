@@ -23,6 +23,10 @@ class SubjectController extends Controller
             'matricula' => 'required|string|max:10'
         ]);
 
+        if (isset(auth()->user()->subjects()->where('subject_id', $request->subject)->get()[0])) {
+            return redirect()->back()->with('fail', 'El usuario ya se encuentra matriculado en la asignatura');
+        }
+
         if ($request->matricula === $subject->matricula) {
             $subject->users()->attach(auth()->user()->id);
             $subject->save();
@@ -33,10 +37,8 @@ class SubjectController extends Controller
 
     public function edit(Subject $subject)
     {
-        if ($subject->user_id === auth()->user()->id) {
-            return view('subject.edit', compact('subject'));
-        } else {
-            abort(404);
-        }
+        $this->authorize('edit', $subject);
+
+        return view('subject.edit', compact('subject'));
     }
 }

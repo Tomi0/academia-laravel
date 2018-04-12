@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Document;
 use App\Policies\DocumentPolicy;
+use App\Policies\SubjectPolicy;
+use App\Subject;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -16,6 +18,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         Document::class => DocumentPolicy::class,
+        Subject::class => SubjectPolicy::class,
     ];
 
     /**
