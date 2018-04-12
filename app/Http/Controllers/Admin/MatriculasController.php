@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Policies\SubjectPolicy;
 use App\Subject;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class MatriculasController extends Controller
 {
@@ -36,7 +38,6 @@ class MatriculasController extends Controller
 
     public function store(Request $request, User $user)
     {
-
         $this->validate($request, [
             'subject' => 'required|exists:subjects,id'
         ]);
@@ -49,5 +50,12 @@ class MatriculasController extends Controller
         $user->save();
 
         return redirect()->back()->with('success', 'Se ha matriculado al usuario');
+    }
+
+    public function destroy(User $user, Subject $subject)
+    {
+        DB::delete('DELETE FROM subject_user WHERE subject_id = :subject_id AND user_id = :user_id', [':subject_id' => $subject->id, ':user_id' => $user->id]);
+
+        return redirect()->back()->with('success', 'Se ha desmatriculado al usuario correctamente.');
     }
 }

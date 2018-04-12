@@ -67,6 +67,7 @@ Route::group([
         Route::get('/matricula', 'MatriculasController@matricula')->name('admin.matricula');
         Route::get('/matricula/{user}/edit', 'MatriculasController@edit')->name('admin.matricula.edit');
         Route::post('/matricula/{user}', 'MatriculasController@store')->name('admin.matricula.store');
+        Route::delete('/matricula/{user}/{subject}', 'MatriculasController@destroy')->name('admin.matricula.destroy');
 
         // RUTAS DE ASIGNATURAS
         Route::get('/subject', 'SubjectsController@index')->name('admin.subject');

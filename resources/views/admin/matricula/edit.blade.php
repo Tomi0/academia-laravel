@@ -56,7 +56,16 @@
                     @if(isset($user->subjects) && count($user->subjects) > 0)
                         @foreach($user->subjects as $subject)
 
-                            <p>{{ $subject->name }} en {{ $subject->course->name }}</p>
+                            <p style="display: inline">{{ $subject->name }} en {{ $subject->course->name }}</p>
+
+                            <form action="{{ route('admin.matricula.destroy', [$user, $subject]) }}" method="POST" style="display: inline" class="pull-right">
+                                {{ csrf_field() }} {{ method_field('DELETE') }}
+
+                                <button class="btn btn-xs btn-danger" onclick="return confirm('¿Seguro que quiere desmatricular a este usuario?')">
+                                    <i class="fa fa-times"></i>
+                                </button>
+
+                            </form>
 
                             <hr />
 
