@@ -10,13 +10,11 @@
 
     <div class="container">
 
-        @if(isset($courses) && count($courses) > 0)
+        @if(isset($categories) && count($categories) > 0)
 
+            @if(isset($category->name))
 
-
-            @if(isset($course->name))
-
-                <h2>{{ $course->name }}</h2>
+                <h2>{{ $category->name }}</h2>
 
             @else
 
@@ -25,18 +23,18 @@
             @endif
 
             <div class="list-group margen-arriba">
-                @foreach($courses as $course)
+                @foreach($categories as $category)
 
-                    <a href="{{ route('course.show', $course) }}" class="list-group-item list-group-item-action" href="#">{{ $course->name }}</a>
+                    <a href="{{ route('category.show', $category) }}" class="list-group-item list-group-item-action">{{ $category->name }}</a>
 
                 @endforeach
             </div>
 
         @else
 
-            @if(isset($course->name))
+            @if(isset($category->name))
 
-                <h2>Asignaturas en {{ $course->name }}</h2>
+                <h2>Asignaturas en {{ $category->name }}</h2>
 
             @else
 

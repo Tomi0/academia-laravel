@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Subject extends Model
 {
 
-    protected $fillable = ['name', 'course_id', 'user_id', 'matricula'];
+    protected $fillable = ['name', 'category_id', 'user_id', 'matricula'];
 
     public function users()
     {
@@ -19,9 +19,9 @@ class Subject extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function course()
+    public function category()
     {
-        return $this->belongsTo(Course::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function documents()

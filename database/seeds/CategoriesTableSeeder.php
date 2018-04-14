@@ -16,130 +16,149 @@ class CategoriesTableSeeder extends Seeder
 
         $category = new Category();
         $category->name = 'Primaria';
-        $category->slug = str_slug($category->name);
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
         $category->name = 'ESO';
-        $category->slug = str_slug($category->name);
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
         $category->name = 'Bachiller';
-        $category->slug = str_slug($category->name);
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
         $category->name = 'PAU';
-        $category->slug = str_slug($category->name);
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
         $category->name = 'Universidad';
-        $category->slug = str_slug($category->name);
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         // PRIMARIA
         $category = new Category();
-        $category->name = 'Primero';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Primero de primaria';
         $category->category_id = 1;
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
-        $category->name = 'Segundo';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Segundo de primaria';
         $category->category_id = 1;
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
-        $category->name = 'Tercero';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Tercero de primaria';
         $category->category_id = 1;
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
-        $category->name = 'Cuarto';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Cuarto de primaria';
         $category->category_id = 1;
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
-        $category->name = 'Quinto';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Quinto de primaria';
         $category->category_id = 1;
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
-        $category->name = 'Sexto';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Sexto de primaria';
         $category->category_id = 1;
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         // ESO
         $category = new Category();
-        $category->name = 'Primero';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Primero de ESO';
         $category->category_id = 2;
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
-        $category->name = 'Segundo';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Segundo de ESO';
         $category->category_id = 2;
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
-        $category->name = 'Tercero';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Tercero de ESO';
         $category->category_id = 2;
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
-        $category->name = 'Cuarto';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Cuarto de ESO';
         $category->category_id = 2;
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         // BACHILLER
         $category = new Category();
-        $category->name = 'Primero';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Primero de bachiller';
         $category->category_id = 3;
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
-        $category->name = 'Segundo';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Segundo de bachiller';
         $category->category_id = 3;
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         // UNIVERSIDAD
         $category = new Category();
-        $category->name = 'Primero';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Primero de carrera';
         $category->category_id = 5;
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
-        $category->name = 'Segundo';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Segundo de carrera';
         $category->category_id = 5;
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
-        $category->name = 'Tercero';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Tercero de carrera';
         $category->category_id = 5;
+        $category->save();
+        $category->slug = str_slug($category->name) . '-' . $category->id;
         $category->save();
 
         $category = new Category();
-        $category->name = 'Cuarto';
-        $category->slug = str_slug($category->name);
+        $category->name = 'Cuarto de carrera';
         $category->category_id = 5;
         $category->save();
-
-
+        $category->slug = str_slug($category->name) . '-' . $category->id;
+        $category->save();
 
     }
 }

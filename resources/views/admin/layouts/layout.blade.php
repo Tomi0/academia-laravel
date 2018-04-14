@@ -92,7 +92,7 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="{{ route('dashboard') }}"><i class="fa fa-home fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-user fa-fw"></i> Usuarios<span class="fa arrow"></span></a>
@@ -122,7 +122,19 @@
                         <a href="{{ route('admin.document') }}"><i class="fa fa-file-text fa-fw"></i> Documentos</a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.matricula') }}"><i class="fa fa-book fa-fw"></i> Matricular usuarios</a>
+                        <a href="{{ route('admin.matricula') }}"><i class="fa fa-book fa-fw"></i> Administrar matriculas</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-suitcase fa-fw"></i> Cursos<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{ route('admin.category') }}">Administrar cursos</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.category.create') }}">Crear un curso</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
                     </li>
                 </ul>
             </div>

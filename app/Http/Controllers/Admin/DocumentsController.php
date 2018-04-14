@@ -28,4 +28,11 @@ class DocumentsController extends Controller
 
         return redirect()->back()->with('success', 'Se ha creado el documento');
     }
+
+    public function destroy(Document $document)
+    {
+        $document->delete();
+
+        return redirect()->back()->with('success', 'Documento eliminado');
+    }
 }

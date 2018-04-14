@@ -28,7 +28,7 @@
 
                                 @foreach($subjects as $subject)
 
-                                    <option value="{{ $subject->id }}">{{ $subject->name }} en {{ $subject->course->name }}</option>
+                                    <option value="{{ $subject->id }}">{{ $subject->name }} en {{ $subject->category->name }}</option>
 
                                 @endforeach
 
@@ -37,7 +37,7 @@
 
                         <div class="form-group">
                             <button class="btn btn-primary">Matricular</button>
-                            <a href="{{ route('admin.matricula') }}">Volver</a>
+                            <a href="{{ route('admin.matricula') }}" class="btn btn-secondary">Volver</a>
                         </div>
 
                     </form>
@@ -56,7 +56,7 @@
                     @if(isset($user->subjects) && count($user->subjects) > 0)
                         @foreach($user->subjects as $subject)
 
-                            <p style="display: inline">{{ $subject->name }} en {{ $subject->course->name }}</p>
+                            <p style="display: inline">{{ $subject->name }} en {{ $subject->category->name }}</p>
 
                             <form action="{{ route('admin.matricula.destroy', [$user, $subject]) }}" method="POST" style="display: inline" class="pull-right">
                                 {{ csrf_field() }} {{ method_field('DELETE') }}

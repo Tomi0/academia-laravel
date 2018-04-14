@@ -10,7 +10,7 @@
 
             @include('partials.messages')
 
-            <h3>Edición de {{ $subject->name }} en el curso {{ $subject->course->name }}:</h3>
+            <h3>Edición de {{ $subject->name }} en el curso {{ $subject->category->name }}:</h3>
                 <a href="{{ route('subject', $subject) }}" class="btn btn-info mini-margen-bot">Volver</a>
 
             <div class="card">

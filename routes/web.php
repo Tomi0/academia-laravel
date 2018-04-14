@@ -18,8 +18,8 @@ Route::get('/about', 'PagesController@about')->name('pages.about');
 
 
 // Rutas de los cursos
-Route::get('/course', 'CoursesController@all')->name('course');
-Route::get('/course/{course}', 'CoursesController@show')->name('course.show');
+Route::get('/category', 'CategoriesController@index')->name('category');
+Route::get('/category/{category}', 'CategoriesController@show')->name('category.show');
 
 
 // Rutas para las asignaturas
@@ -80,6 +80,15 @@ Route::group([
         // RUTAS DE ADMINISTRACIÓN DE DOCUMENTOS
         Route::get('/document', 'DocumentsController@index')->name('admin.document');
         Route::post('/document', 'DocumentsController@store')->name('admin.document.store');
+        Route::delete('/document/{document}', 'DocumentsController@destroy')->name('admin.document.delete');
+
+        // RUTAS DE ADMINISTRACIÓN DE CURSOS
+        Route::get('/category', 'CategoriesController@index')->name('admin.category');
+        Route::get('/category/create', 'CategoriesController@create')->name('admin.category.create');
+        Route::post('/category', 'CategoriesController@store')->name('admin.category.store');
+        Route::get('/category/{category}/edit', 'CategoriesController@edit')->name('admin.category.edit');
+        Route::put('/category/{category}', 'CategoriesController@update')->name('admin.category.update');
+        Route::delete('/category/{category}', 'CategoriesController@destroy')->name('admin.category.destroy');
     });
 
 Auth::routes();

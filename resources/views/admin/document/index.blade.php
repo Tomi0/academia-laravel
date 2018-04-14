@@ -40,7 +40,7 @@
                                     <select name="subject_id" id="subject_id" class="form-control">
                                         @foreach($subjects as $subject)
 
-                                            <option {{ old('description') == $subject->id ? 'selected' : '' }} value="{{ $subject->id }}">{{ $subject->name }} en {{ $subject->course->name }}</option>
+                                            <option {{ old('description') == $subject->id ? 'selected' : '' }} value="{{ $subject->id }}">{{ $subject->name }} en {{ $subject->category->name }}</option>
 
                                         @endforeach
                                     </select>
@@ -96,7 +96,7 @@
 
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Curso: {{ $subject->course->name }} | Asignatura: {{ $subject->name }}
+                                Curso: {{ $subject->category->name }} | Asignatura: {{ $subject->name }}
                             </div>
                             <div class="panel-body">
 
@@ -115,7 +115,7 @@
                                                 <a href="{{ route('document.show', $document) }}" target="_blank" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i></a>
                                             </td>
                                             <td>
-                                                <form action="{{ route('document.delete', $document) }}" method="POST">
+                                                <form action="{{ route('admin.document.delete', $document) }}" method="POST">
                                                     {{ csrf_field() }} {{ method_field('DELETE') }}
                                                     <button class="btn btn-xs btn-danger" onclick="return confirm('¿Está seguro de que quiere eliminar el documento?')">
                                                         <i class="fa fa-times"></i>

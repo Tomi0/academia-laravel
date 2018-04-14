@@ -40,7 +40,7 @@
 
                     <tr>
                         <td>{{ $subject->name }}</td>
-                        <td>{{ $subject->course->name }}</td>
+                        <td>{{ $subject->category->name }}</td>
                         <td>{{ $subject->user->name }}</td>
                         <td>{{ count($subject->users) }}</td>
                         <td>

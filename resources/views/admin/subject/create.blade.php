@@ -25,14 +25,14 @@
                         <input type="text" name="name" id="name" placeholder="introduzca un nombre" class="form-control">
                         {!! $errors->first('name', '<span class="help-block text-danger">:message</span>') !!}
                     </div>
-                    <div class="form-group col-lg-6 {{ $errors->has('course_id') ? 'has-error' : '' }}">
-                        <label for="course_id">Curso</label>
-                        <select name="course_id" id="course_id" class="form-control">
-                            @foreach($courses as $course)
-                                <option value="{{ $course->id }}">{{ $course->name }}</option>
+                    <div class="form-group col-lg-6 {{ $errors->has('category_id') ? 'has-error' : '' }}">
+                        <label for="category_id">Curso</label>
+                        <select name="category_id" id="category_id" class="form-control">
+                            @foreach($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
-                        {!! $errors->first('course_id', '<span class="help-block text-danger">:message</span>') !!}
+                        {!! $errors->first('category_id', '<span class="help-block text-danger">:message</span>') !!}
                     </div>
                 </div>
 

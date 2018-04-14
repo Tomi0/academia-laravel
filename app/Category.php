@@ -4,20 +4,27 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class Category extends Model
 {
+    protected $fillable = ['name', 'category_id'];
+
     public function subjects()
     {
         return $this->hasMany(Subject::class);
     }
 
+    public function category()
+    {
+        return $this->belongsTo(self::class);
+    }
+
     public static function create(array $attributes = [])
     {
-        $course = static::query()->create($attributes);
+        $category = static::query()->create($attributes);
 
-        $course->generateSlug();
+        $category->generateSlug();
 
-        return $course;
+        return $category;
     }
 
     // genera un slug, si existe ya en la base de datos le concatena el id del curso

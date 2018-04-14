@@ -8,7 +8,7 @@
 
     <div class="container">
 
-        <h2>{{ $subject->course->name }}: {{ $subject->name }}</h2>
+        <h2>{{ $subject->category->name }}: {{ $subject->name }}</h2>
 
         @if($subject->user_id === auth()->user()->id)
             <a href="{{ route('subject.edit', $subject) }}" class="btn btn-secondary">Editar asignatura</a>

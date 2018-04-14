@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Course;
+use App\Category;
 use App\Subject;
 use App\User;
 use Illuminate\Http\Request;
@@ -29,17 +29,17 @@ class SubjectsController extends Controller
 
     public function create()
     {
-        $courses = Course::whereNotNull('course_id')->orWhere('name', 'PAU')->get();
+        $categories = Category::whereNotNull('category_id')->orWhere('name', 'PAU')->get();
         $profesores = User::role('profesor')->get();
 
-        return view('admin.subject.create', compact('courses', 'profesores'));
+        return view('admin.subject.create', compact('categories', 'profesores'));
     }
 
     public function store(Request $request)
     {
         $this->validate($request, [
             'name' => 'required|string|max:100',
-            'course_id' => 'required',
+            'category_id' => 'required',
             'user_id' => 'required'
         ]);
 
@@ -50,22 +50,22 @@ class SubjectsController extends Controller
 
     public function edit(Subject $subject)
     {
-        $courses = Course::whereNotNull('course_id')->orWhere('name', 'PAU')->get();
+        $categories = Category::whereNotNull('category_id')->orWhere('name', 'PAU')->get();
         $profesores = User::role('profesor')->get();
 
-        return view('admin.subject.edit', compact('subject', 'courses', 'profesores'));
+        return view('admin.subject.edit', compact('subject', 'categories', 'profesores'));
     }
 
     public function update(Request $request, Subject $subject)
     {
         $this->validate($request, [
             'name' => 'required|string|max:100',
-            'course_id' => 'required',
+            'category_id' => 'required',
             'user_id' => 'required'
         ]);
 
         $subject->name = $request->name;
-        $subject->course_id = $request->course_id;
+        $subject->category_id = $request->category_id;
         $subject->user_id = $request->user_id;
         $subject->update();
 

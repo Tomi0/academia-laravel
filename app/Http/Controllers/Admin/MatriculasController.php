@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Policies\SubjectPolicy;
 use App\Subject;
 use App\User;
 use Illuminate\Http\Request;

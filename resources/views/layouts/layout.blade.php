@@ -51,7 +51,7 @@
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('/') ? 'active' : '' }}" href="{{ route('pages.home') }}">Inicio</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('course') || Request::is('course/*') || Request::is('subject/*') || Request::is('subject') ? 'active' : '' }}" href="{{ route('course') }}">Cursos</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('category') || Request::is('category/*') || Request::is('subject/*') || Request::is('subject') ? 'active' : '' }}" href="{{ route('category') }}">Cursos</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger " href="#">Blog</a>

@@ -16,7 +16,7 @@ class SubjectTableSeeder extends Seeder
 
         $subject = new Subject();
         $subject->name = 'Lengua';
-        $subject->course_id = 4;
+        $subject->category_id = 4;
         $subject->user_id = 2;
         $subject->matricula = str_random(10);
         $subject->save();
@@ -26,7 +26,7 @@ class SubjectTableSeeder extends Seeder
 
         $subject = new Subject();
         $subject->name = 'Matematicas';
-        $subject->course_id = 4;
+        $subject->category_id = 4;
         $subject->user_id = 2;
         $subject->matricula = str_random(10);
         $subject->save();
@@ -36,7 +36,7 @@ class SubjectTableSeeder extends Seeder
         for ($i = 6; $i <= 21; $i++) {
             $subject = new Subject();
             $subject->name = 'Lengua';
-            $subject->course_id = $i;
+            $subject->category_id = $i;
             $subject->user_id = 10;
             $subject->matricula = str_random(10);
             $subject->save();
@@ -45,7 +45,7 @@ class SubjectTableSeeder extends Seeder
 
             $subject = new Subject();
             $subject->name = 'Matematicas';
-            $subject->course_id = $i;
+            $subject->category_id = $i;
             $subject->user_id = 10;
             $subject->matricula = str_random(10);
             $subject->save();

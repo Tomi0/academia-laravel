@@ -12,7 +12,7 @@
 
     <div class="panel panel-green">
         <div class="panel-heading">
-            Editar {{ $subject->name }} en {{ $subject->course->name }}
+            Editar {{ $subject->name }} en {{ $subject->category->name }}
         </div>
         <div class="panel-body">
 
@@ -25,14 +25,14 @@
                         <input type="text" name="name" id="name" placeholder="introduzca un nombre" class="form-control" value="{{ old('name', $subject->name) }}">
                         {!! $errors->first('name', '<span class="help-block text-danger">:message</span>') !!}
                     </div>
-                    <div class="form-group col-lg-6 {{ $errors->has('course_id') ? 'has-error' : '' }}">
-                        <label for="course_id">Curso</label>
-                        <select name="course_id" id="course_id" class="form-control">
-                            @foreach($courses as $course)
-                                <option {{ old('name', $subject->course_id) == $course->id ? 'selected' : '' }} value="{{ $course->id }}">{{ $course->name }}</option>
+                    <div class="form-group col-lg-6 {{ $errors->has('category_id') ? 'has-error' : '' }}">
+                        <label for="category_id">Curso</label>
+                        <select name="category_id" id="category_id" class="form-control">
+                            @foreach($categories as $category)
+                                <option {{ old('name', $subject->category_id) == $category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
-                        {!! $errors->first('course_id', '<span class="help-block text-danger">:message</span>') !!}
+                        {!! $errors->first('category_id', '<span class="help-block text-danger">:message</span>') !!}
                     </div>
                 </div>
 
