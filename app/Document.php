@@ -38,7 +38,21 @@ class Document extends Model
 
         $doc = static::query()->create($attributes);
 
+        $doc->generateSlug();
+
         return $doc;
     }
 
+    public function generateSlug()
+    {
+        $this->slug = str_slug($this->name) . '-' . $this->id;
+
+        $this->save();
+    }
+
+    // usa el slug para la url
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

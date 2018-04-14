@@ -35,7 +35,22 @@ class Subject extends Model
 
         $subject = static::query()->create($attributes);
 
+        $subject->generateSlug();
+
         return $subject;
     }
 
+    // genera un slug, si existe ya en la base de datos le concatena el id del curso
+    public function generateSlug()
+    {
+        $this->slug = str_slug($this->name) . '-' . $this->id;
+
+        $this->save();
+    }
+
+    // usa el slug para la url
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

@@ -17,6 +17,7 @@ class CreateDocumentsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->mediumText('description')->nullable();
+            $table->mediumText('slug')->nullable();
             $table->string('url');
             $table->unsignedInteger('subject_id');
             $table->timestamps();
