@@ -22,6 +22,8 @@
 
             @endif
 
+            @include('partials.breadcrumb')
+
             <div class="list-group margen-arriba">
                 @foreach($categories as $category)
 
@@ -41,6 +43,8 @@
                 <h2>Asignaturas:</h2>
 
             @endif
+
+            @include('partials.breadcrumb')
 
             <div class="list-group margen-arriba">
                 @foreach($subjects as $subject)

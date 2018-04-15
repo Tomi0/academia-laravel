@@ -10,6 +10,8 @@
 
         <h2>{{ $subject->category->name }}: {{ $subject->name }}</h2>
 
+        @include('partials.breadcrumb')
+
         @if($subject->user_id === auth()->user()->id)
             <a href="{{ route('subject.edit', $subject) }}" class="btn btn-secondary">Editar asignatura</a>
         @endif
