@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Document;
 use App\Subject;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SubjectController extends Controller
 {
@@ -40,5 +42,14 @@ class SubjectController extends Controller
         $this->authorize('edit', $subject);
 
         return view('subject.edit', compact('subject'));
+    }
+
+    public function desmatricular(Subject $subject, User $user)
+    {
+        $this->authorize('edit', $subject);
+
+        DB::delete('DELETE FROM subject_user WHERE subject_id = :subject_id AND user_id = :user_id', [':subject_id' => $subject->id, ':user_id' => $user->id]);
+
+        return redirect()->back()->with('success', 'Se ha desmatriculado al usuario correctamente.');
     }
 }

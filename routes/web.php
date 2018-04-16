@@ -35,6 +35,7 @@ Route::group([
     'middleware' => ['auth', 'role:profesor|admin']],
     function () {
         Route::get('/subject/{subject}/edit', 'SubjectController@edit')->name('subject.edit');
+        Route::delete('/subject/{subject}/{user}', 'SubjectController@desmatricular')->name('subject.desmatricular');
     });
 
 

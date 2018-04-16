@@ -10,54 +10,114 @@
 
             @include('partials.messages')
 
-            <h3>Edición de {{ $subject->name }} en el curso {{ $subject->category->name }}:</h3>
-                <a href="{{ route('subject', $subject) }}" class="btn btn-info mini-margen-bot">Volver</a>
-
-            <div class="card">
-                <div class="card-header">
-                    Documentos
+            <div class="row">
+                <div class="col-lg-7">
+                    <h3>Edición de {{ $subject->name }} en el curso {{ $subject->category->name }}:</h3>
                 </div>
-                <div class="card-body">
+                <div class="col-lg-5 text-right">
+                    <a href="{{ route('subject', $subject) }}" class="btn btn-info mini-margen-bot">Volver</a>
+                </div>
+            </div>
 
-                    @if(isset($subject->documents) && count($subject->documents) > 0)
+            <div class="row margen-arriba">
+                <div class="col-lg-7">
+                    <div class="card">
+                        <div class="card-header">
+                            Documentos
+                        </div>
+                        <div class="card-body">
 
-                        <table class="table text-center">
+                            @if(isset($subject->documents) && count($subject->documents) > 0)
 
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Descrición</th>
-                                <th>Acciones</th>
-                            </tr>
+                                <table class="table text-center">
 
-                            @foreach($subject->documents as $document)
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descrición</th>
+                                        <th>Acciones</th>
+                                    </tr>
 
-                                <tr>
-                                    <td>{{ $document->name }}</td>
-                                    <td>{{ $document->description }}</td>
-                                    <td>
+                                    @foreach($subject->documents as $document)
 
-                                        <a href="{{ route('document.show', $document) }}" target="_blank" class="btn btn-xs btn-primary mini-margen-bot">Ver</a>
+                                        <tr>
+                                            <td>{{ $document->name }}</td>
+                                            <td>{{ $document->description }}</td>
+                                            <td>
 
-                                        <form action="{{ route('document.delete', $document) }}" method="POST" style="display: inline;">
-                                            {{ csrf_field() }} {{ method_field('DELETE') }}
+                                                <a href="{{ route('document.show', $document) }}" target="_blank" class="btn btn-xs btn-primary mini-margen-bot">Ver</a>
 
-                                            <button href="{{ route('document.show', $document) }}" class="btn btn-xs btn-danger" onclick="return confirm('¿Seguro que quire eliminar el documento?');">Eliminar</button>
+                                                <form action="{{ route('document.delete', $document) }}" method="POST" style="display: inline;">
+                                                    {{ csrf_field() }} {{ method_field('DELETE') }}
 
-                                        </form>
+                                                    <button href="{{ route('document.show', $document) }}" class="btn btn-xs btn-danger" onclick="return confirm('¿Seguro que quire eliminar el documento?');">Eliminar</button>
 
-                                    </td>
-                                </tr>
+                                                </form>
 
-                            @endforeach
+                                            </td>
+                                        </tr>
 
-                        </table>
+                                    @endforeach
 
-                    @else
+                                </table>
 
-                        <strong>No hay documentos en esta asignatura</strong>
+                            @else
 
-                    @endif
+                                <strong>No hay documentos en esta asignatura</strong>
 
+                            @endif
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card">
+                        <div class="card-header">
+                            Usuarios en matriculados en la asignatura
+                        </div>
+                        <div class="card-body">
+                            @if(isset($subject->users) && count($subject->users) > 0)
+
+                                <table class="table text-center">
+
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Desmatricular</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+
+                                    @foreach($subject->users as $user)
+
+                                        <tr>
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>
+
+                                                <form action="{{ route('subject.desmatricular', [$subject, $user]) }}" method="POST">
+                                                    {{ csrf_field() }} {{ method_field('DELETE') }}
+
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('¿Desea desmatricular este usuario de la asignatura?');">Desmatricular</button>
+
+                                                </form>
+
+                                            </td>
+                                        </tr>
+
+                                    @endforeach
+
+                                    </tbody>
+
+                                </table>
+                            @else
+
+                                <h5>No hay usuarios matriculados en esta asignatura</h5>
+
+                            @endif
+                        </div>
+                    </div>
                 </div>
             </div>
 
