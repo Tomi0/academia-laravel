@@ -30,6 +30,13 @@ Route::group([
         Route::post('/subject/{subject}/matricular', 'SubjectController@matricular')->name('subject.matricular');
     });
 
+// Rutas para los posts
+Route::group([
+    'middleware' => ['auth', 'role:alumno|profesor|admin']],
+    function () {
+        Route::get('/posts', 'PostsController@index')->name('posts');
+    });
+
 // Rutas para editar asignaturas y agregar o eliminar documentos a las asignaturas
 Route::group([
     'middleware' => ['auth', 'role:profesor|admin']],

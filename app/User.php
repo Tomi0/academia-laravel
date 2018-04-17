@@ -33,6 +33,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Subject::class);
     }
 
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
     public static function create(array $attributes = [])
     {
         $attributes['password'] = bcrypt($attributes['password']);

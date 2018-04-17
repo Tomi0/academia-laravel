@@ -42,3 +42,23 @@
 .margen-izquierda-normal {
     margin-left: 15px;
 }
+
+.pagination li{
+    margin: 0 15px;
+}
+.pagination li a{
+    display: block;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+}
+
+.pagination .active {
+    display: block;
+    background: #18BC9C;
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+}

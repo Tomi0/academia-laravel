@@ -14,6 +14,11 @@ class Document extends Model
         return $this->belongsTo(Subject::class);
     }
 
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
     // se sobreescribe el metodo del padre
     public static function boot()
     {
