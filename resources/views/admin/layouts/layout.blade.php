@@ -29,7 +29,7 @@
 
     <!-- Custom Fonts -->
     <link href="/admin-template/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/app.css" rel="stylesheet" type="text/css">
+    <link href="/css/admin-css.css" rel="stylesheet" type="text/css">
 
 </head>
 
