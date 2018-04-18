@@ -10,7 +10,13 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $posts = Post::paginate();
+        // un array con el id de las asignaturas a las que se encuentra matriculado
+        $userSubjectsId = array();
+        foreach (auth()->user()->subjects as $subject) {
+            $userSubjectsId[] = $subject->id;
+        }
+
+        $posts = Post::whereIn('subject_id', $userSubjectsId)->latest()->paginate();
 
         return view('post.index', compact('posts'));
     }

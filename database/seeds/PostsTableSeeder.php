@@ -16,6 +16,7 @@ class PostsTableSeeder extends Seeder
 
         factory(Post::class, 50)->create()->each(function ($post) {
             $post->generateSlug();
+            $post->generateSubjectId();
         });
     }
 }

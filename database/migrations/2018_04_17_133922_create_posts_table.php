@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('slug')->nullable();
             $table->mediumText('contenido');
             $table->unsignedInteger('document_id');
+            $table->unsignedInteger('subject_id')->nullable();
             $table->unsignedInteger('user_id');
             $table->timestamps();
         });

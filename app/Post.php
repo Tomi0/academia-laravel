@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable = ['title', 'slug', 'contenido', 'document_id', 'user_id'];
+    protected $fillable = ['title', 'slug', 'contenido', 'document_id', 'subject_id', 'user_id'];
 
     public function document()
     {
@@ -32,6 +32,13 @@ class Post extends Model
     public function generateSlug()
     {
         $this->slug = str_slug($this->title) . '-' . $this->id;
+
+        $this->save();
+    }
+
+    public function generateSubjectId()
+    {
+        $this->subject_id = $this->document->subject_id;
 
         $this->save();
     }

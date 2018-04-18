@@ -33,7 +33,7 @@ class UsersTableSeeder extends Seeder
         factory(User::class)->create([
             'name' => 'Alumno1',
             'email' => 'alu@gmail.com',
-        ])->assignRole($alumnoRol);
+        ])->assignRole($alumnoRol)->subjects()->attach([1,2,3]);
 
         factory(User::class)->create([
             'name' => 'Invitado1',
