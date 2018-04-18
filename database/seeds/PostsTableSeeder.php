@@ -12,9 +12,10 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
+        Post::truncate();
+
         factory(Post::class, 50)->create()->each(function ($post) {
-            $post->slug = str_slug($post->title);
-            $post->save();
+            $post->generateSlug();
         });
     }
 }

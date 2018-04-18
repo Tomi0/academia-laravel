@@ -31,7 +31,7 @@ class Post extends Model
 
     public function generateSlug()
     {
-        $this->slug = str_slug($this->name) . '-' . $this->id;
+        $this->slug = str_slug($this->title) . '-' . $this->id;
 
         $this->save();
     }
