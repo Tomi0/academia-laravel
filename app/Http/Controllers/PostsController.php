@@ -20,4 +20,11 @@ class PostsController extends Controller
 
         return view('post.index', compact('posts'));
     }
+
+    public function show(Post $post)
+    {
+        $this->authorize('view', $post);
+
+        return view('post.show', compact('post'));
+    }
 }

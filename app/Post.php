@@ -18,6 +18,16 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
+    }
+
+    public function post()
+    {
+        return $this->belongsTo(self::class);
+    }
+
     public function create(array $attributes = [])
     {
         $attributes['user_id'] = auth()->user()->id;
@@ -41,5 +51,11 @@ class Post extends Model
         $this->subject_id = $this->document->subject_id;
 
         $this->save();
+    }
+
+    // usa el slug para la url
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

@@ -27,7 +27,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $post->title }}</h5>
                                 <p class="card-text">{{ $post->contenido }}</p>
-                                <a href="{{ route('document.show', $post->document) }}" target="_blank" class="btn btn-primary">Ver documento</a>
+                                <a href="{{ route('document.show', $post->document) }}" target="_blank" class="">Ver documento</a>
+                                <br />
+                                <a href="{{ route('post.show', $post) }}" class="">Ver más</a>
                             </div>
                         </div>
 

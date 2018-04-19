@@ -54,7 +54,7 @@
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('category') || Request::is('category/*') || Request::is('subject/*') || Request::is('subject') ? 'active' : '' }}" href="{{ route('category') }}">Cursos</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('posts') ? 'active' : '' }}" href="{{ route('posts') }}">Posts</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{ Request::is('posts') || Request::is('posts/*') ? 'active' : '' }}" href="{{ route('post') }}">Posts</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
                         <form action="{{ route('logout') }}" method="POST">
