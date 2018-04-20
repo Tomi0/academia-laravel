@@ -85,6 +85,7 @@ Route::group([
         Route::post('/subject', 'SubjectsController@store')->name('admin.subject.store');
         Route::put('/subject/{subject}', 'SubjectsController@update')->name('admin.subject.update');
         Route::delete('/subject/{subject}', 'SubjectsController@destroy')->name('admin.subject.destroy');
+        Route::get('/subject/{subject}', 'SubjectsController@generarMatricula')->name('admin.subject.codigomatricula');
 
         // RUTAS DE ADMINISTRACIÓN DE DOCUMENTOS
         Route::get('/document', 'DocumentsController@index')->name('admin.document');

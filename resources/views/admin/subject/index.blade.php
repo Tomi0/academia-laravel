@@ -31,6 +31,7 @@
                     <th>Pertenece a</th>
                     <th>Profesor</th>
                     <th>Matriculados</th>
+                    <th>Codigo matricula</th>
                     <th>Acciones</th>
                 </tr>
                 </thead>
@@ -43,6 +44,12 @@
                         <td>{{ $subject->category->name }}</td>
                         <td>{{ $subject->user->name }}</td>
                         <td>{{ count($subject->users) }}</td>
+                        <td>
+                            {{ $subject->matricula }}
+                            <a href="{{ route('admin.subject.codigomatricula', $subject) }}" class="btn btn-xs btn-info pull-right" onclick="return confirm('¿Seguro que quiere eliminar esta asignatura? Se borrarán todos sus documentos.')">
+                                <i class="fa fa-refresh"></i>
+                            </a>
+                        </td>
                         <td>
                             <a href="{{ route('admin.subject.edit', $subject) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
                             <form action="{{ route('admin.subject.destroy', $subject) }}" method="POST" style="display: inline;">

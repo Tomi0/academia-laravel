@@ -71,4 +71,13 @@ class SubjectsController extends Controller
 
         return redirect()->back()->with('success', 'Se editado la asignatura correctamente.');
     }
+
+    public function generarMatricula(Subject $subject)
+    {
+        $subject->matricula = str_random(10);
+
+        $subject->save();
+
+        return redirect()->back()->with('success', 'Se ha cambiado la clave para matricularse');
+    }
 }
