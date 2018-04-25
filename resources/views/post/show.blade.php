@@ -21,7 +21,7 @@
                     <h5 class="card-header">{{ $post->user->name }} at {{ $post->created_at->format('M d Y H:i') }}</h5>
                     <div class="card-body">
                         <h5 class="card-title">{{ $post->title }}</h5>
-                        <p class="card-text">{{ $post->contenido }}</p>
+                        {!! $post->contenido !!}
                         <a href="{{ route('document.show', $post->document) }}" target="_blank">Ver documento</a>
                         <br />
                         <a href="#">Responder</a>

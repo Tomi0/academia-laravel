@@ -28,9 +28,10 @@ class Post extends Model
         return $this->belongsTo(self::class);
     }
 
-    public function create(array $attributes = [])
+    public static function create(array $attributes = [])
     {
         $attributes['user_id'] = auth()->user()->id;
+        $attributes['subject_id'] = Document::where('id', $attributes['document_id'])->get()[0]->subject_id;
 
         $post = static::query()->create($attributes);
 

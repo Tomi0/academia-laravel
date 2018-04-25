@@ -99,6 +99,14 @@ Route::group([
         Route::get('/category/{category}/edit', 'CategoriesController@edit')->name('admin.category.edit');
         Route::put('/category/{category}', 'CategoriesController@update')->name('admin.category.update');
         Route::delete('/category/{category}', 'CategoriesController@destroy')->name('admin.category.destroy');
+
+        // RUTAS DE ADMINISTRACIÓN DE POSTS
+        Route::get('/post', 'PostsController@index')->name('admin.post');
+        Route::get('/post/create', 'PostsController@create')->name('admin.post.create');
+        Route::get('/post/{post}', 'PostsController@edit')->name('admin.post.edit');
+        Route::post('/post/store', 'PostsController@store')->name('admin.post.store');
+        Route::put('/post/{post}', 'PostsController@update')->name('admin.post.update');
+        Route::delete('/post/{post}', 'PostsController@destroy')->name('admin.post.destroy');
     });
 
 Auth::routes();

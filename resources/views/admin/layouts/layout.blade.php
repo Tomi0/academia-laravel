@@ -136,6 +136,18 @@
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
+                    <li>
+                        <a href="#"><i class="fa fa-envelope-o fa-fw"></i> Posts<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{ route('admin.post') }}">Administrar posts</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.post.create') }}">Crear un post</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->
