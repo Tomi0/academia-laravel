@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable = ['title', 'slug', 'contenido', 'document_id', 'subject_id', 'user_id'];
+    protected $fillable = ['title', 'slug', 'contenido', 'document_id', 'subject_id', 'post_id', 'user_id'];
 
     public function document()
     {
@@ -31,11 +31,11 @@ class Post extends Model
     public static function create(array $attributes = [])
     {
         $attributes['user_id'] = auth()->user()->id;
-        $attributes['subject_id'] = Document::where('id', $attributes['document_id'])->get()[0]->subject_id;
 
         $post = static::query()->create($attributes);
 
         $post->generateSlug();
+        $post->generateSubjectId();
 
         return $post;
     }

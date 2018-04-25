@@ -16,7 +16,7 @@ class PostsController extends Controller
             $userSubjectsId[] = $subject->id;
         }
 
-        $posts = Post::whereIn('subject_id', $userSubjectsId)->latest()->paginate();
+        $posts = Post::whereIn('subject_id', $userSubjectsId)->whereNull('post_id')->latest()->paginate();
 
         return view('post.index', compact('posts'));
     }
@@ -25,6 +25,23 @@ class PostsController extends Controller
     {
         $this->authorize('view', $post);
 
-        return view('post.show', compact('post'));
+        $respuestas = Post::where('post_id', $post->id)->oldest()->get();
+
+        return view('post.show', compact('post', 'respuestas'));
+    }
+
+    public function storeRespuesta(Post $post, Request $request)
+    {
+        $this->validate($request, [
+            'title' => 'required|string|max:100',
+            'contenido' => 'required|max:250'
+        ]);
+
+        $request['post_id'] = $post->id;
+        $request['document_id'] = $post->document_id;
+
+        Post::create($request->all());
+
+        return redirect()->back()->with('success', 'Tu comentario ha sido creado');
     }
 }

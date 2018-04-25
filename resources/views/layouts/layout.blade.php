@@ -27,6 +27,8 @@
     <!-- Custom styles for this template -->
     <link href="/template/css/freelancer.min.css" rel="stylesheet">
 
+    @stack('styles')
+
     <!-- css personalizado -->
     <link rel="stylesheet" href="/css/app.css">
 
@@ -168,6 +170,8 @@
 
 <!-- Custom scripts for this template -->
 <script src="/template/js/freelancer.js"></script>
+
+@stack('scripts')
 
 </body>
 

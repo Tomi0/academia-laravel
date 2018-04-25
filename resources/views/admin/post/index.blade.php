@@ -29,6 +29,7 @@
                     <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                         <tr>
+                            <th>Id</th>
                             <th>Titulo</th>
                             <th>Autor</th>
                             <th>Documento</th>
@@ -41,6 +42,7 @@
                         @foreach($posts as $post)
 
                             <tr>
+                                <td>{{ $post->id }}</td>
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->user->name }}</td>
                                 <td><a href="{{ route('document.show', $post->document) }}" class="btn btn-info">Ver documento</a></td>

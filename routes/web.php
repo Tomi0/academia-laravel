@@ -34,8 +34,12 @@ Route::group([
 Route::group([
     'middleware' => ['auth', 'role:alumno|profesor|admin']],
     function () {
-        Route::get('/posts', 'PostsController@index')->name('post');
-        Route::get('/posts/{post}', 'PostsController@show')->name('post.show');
+        Route::get('/post', 'PostsController@index')->name('post');
+        Route::get('/post/{post}', 'PostsController@show')->name('post.show');
+        Route::get('/post/{document}', 'PostsController@create')->name('post.create');
+        Route::post('/post/{post}/store', 'PostsController@storeRespuesta')->name('post.respuesta.store');
+        Route::post('/post/{document}/store', 'PostsController@store')->name('post.store');
+
     });
 
 // Rutas para editar asignaturas y agregar o eliminar documentos a las asignaturas
