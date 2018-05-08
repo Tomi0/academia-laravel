@@ -2,6 +2,7 @@
 
 namespace App\Policies;
 
+use App\Document;
 use App\Subject;
 use App\User;
 use App\Post;
@@ -36,9 +37,10 @@ class PostPolicy
      * @param  \App\User  $user
      * @return mixed
      */
-    public function create(User $user, Subject $subject)
+    public function create(User $user)
     {
-        return isset($user->subjects()->where('subject_id', $subject->id)->get()[0]);
+        // temporal
+        return true;
     }
 
     /**

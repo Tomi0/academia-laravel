@@ -47,7 +47,7 @@
                             <div class="col-lg-12">
                                 <div class="form-group {{ $errors->has('contenido') ? 'has-error' : '' }}">
                                     <label for="editor" class="control-label">Contenido</label>
-                                    <textarea name="contenido" id="editor" class="form-control" rows="15">{{ old('contenido') }}</textarea>
+                                    <textarea name="contenido" id="editor" class="form-control" rows="50">{{ old('contenido') }}</textarea>
                                     {!! $errors->first('contenido', '<span class="help-block text-danger">:message</span>') !!}
                                 </div>
                             </div>

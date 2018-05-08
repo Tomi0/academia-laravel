@@ -41,6 +41,16 @@
                                 {!! $respuesta->contenido !!}
                                 <a href="{{ route('document.show', $respuesta->document) }}" target="_blank">Ver documento</a>
                                 <br />
+
+                                @if($respuesta->user->id === auth()->user()->id)
+
+                                    <form action="{{ route('post.destroy', $respuesta) }}" method="POST">
+                                        {{ csrf_field() }} {{ method_field('DELETE') }}
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Seguro que desea eliminar el mensaje?')">Eliminar post</button>
+                                    </form>
+
+                                @endif
+
                             </div>
                         </div>
                     @endforeach

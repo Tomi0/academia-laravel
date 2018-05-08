@@ -32,6 +32,8 @@
 
                         <a href="{{ route('document.show', $doc) }}" target="_blank" class="btn btn-primary">Ver documento</a>
 
+                        <a href="{{ route('post.show', $doc) }}" class="btn btn-primary">Crear post</a>
+
                         <hr />
 
                     @endforeach
@@ -44,6 +46,61 @@
             <h3 class="margen-arriba">No hay documentos en esta asignatura</h3>
 
         @endif
+
+        <hr />
+
+        <h4>Crear un comentario</h4>
+
+        @if(isset($subject->documents) && count($subject->documents) > 0)
+            <div class="row">
+                <div class="col-lg-12">
+                    <form action="{{ route('post.store') }}" method="POST">
+                        {{ csrf_field() }}
+                        <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
+                            <label for="titleID">Titulo</label>
+                            <input type="text" name="title" id="titleID" class="form-control" value="{{ old('title') }}" placeholder="titulo de la respuesta">
+                            {!! $errors->first('title', '<span class="help-block text-danger">:message</span>') !!}
+                        </div>
+
+                        <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
+                            <label for="documentID">Documento</label>
+                            <select name="document_id" id="documentID" class="form-control">
+
+                                @foreach($subject->documents as $document)
+
+                                    <option {{ old('document_id') == $document->id ? 'selected' : '' }} value="{{ $document->id }}">{{ $document->name }}</option>
+
+                                @endforeach
+
+                            </select>
+                        </div>
+
+                        <div class="form-group {{ $errors->has('contenido') ? 'has-error' : '' }}">
+                            <label for="editar">Contenido</label>
+                            <textarea name="contenido" id="editor" class="form-control" rows="10">{{ old('contenido') }}</textarea>
+                            {!! $errors->first('contenido', '<span class="help-block text-danger">:message</span>') !!}
+                        </div>
+
+                        <div class="form-gorup">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        @endif
+
     </div>
 
 @endsection
+
+@push('scripts')
+
+    <script src="/ckeditor/ckeditor.js"></script>
+
+    <script>
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace( 'editor' );
+    </script>
+
+@endpush

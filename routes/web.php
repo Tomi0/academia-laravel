@@ -38,7 +38,8 @@ Route::group([
         Route::get('/post/{post}', 'PostsController@show')->name('post.show');
         Route::get('/post/{document}', 'PostsController@create')->name('post.create');
         Route::post('/post/{post}/store', 'PostsController@storeRespuesta')->name('post.respuesta.store');
-        Route::post('/post/{document}/store', 'PostsController@store')->name('post.store');
+        Route::post('/post/store', 'PostsController@store')->name('post.store');
+        Route::delete('/post/{post}', 'PostsController@destroy')->name('post.destroy');
 
     });
 
