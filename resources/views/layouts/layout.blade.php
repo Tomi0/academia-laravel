@@ -91,6 +91,11 @@
 </nav>
 
 <section class="contenedor">
+
+    <div class="container">
+        @include('partials.messages')
+    </div>
+
     @yield('content')
 </section>
 

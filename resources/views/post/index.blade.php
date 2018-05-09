@@ -8,7 +8,7 @@
 
     <div class="container">
 
-        <h3>Posts recientes de tus asignaturas:</h3>
+        <h3>Posts recientes:</h3>
 
         @if(isset($posts) && count($posts) > 0)
 
@@ -26,10 +26,7 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ $post->title }}</h5>
-                                <p class="card-text">{{ $post->contenido }}</p>
-                                <a href="{{ route('document.show', $post->document) }}" target="_blank" class="">Ver documento</a>
-                                <br />
-                                <a href="{{ route('post.show', $post) }}" class="">Ver más</a>
+                                <a href="{{ route('post.show', $post) }}" class="">Leer más</a>
                             </div>
                         </div>
 

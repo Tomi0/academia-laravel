@@ -32,6 +32,7 @@
                             <th>Id</th>
                             <th>Titulo</th>
                             <th>Autor</th>
+                            <th>Respuesta</th>
                             <th>Documento</th>
                             <th>Asignatura</th>
                             <th>Acciones</th>
@@ -45,6 +46,7 @@
                                 <td>{{ $post->id }}</td>
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->user->name }}</td>
+                                <td>{{ isset($post->post_id) ? 'Si' : 'No' }}</td>
                                 <td><a href="{{ route('document.show', $post->document) }}" class="btn btn-info">Ver documento</a></td>
                                 <td>{{ $post->subject->name }} en {{ $post->subject->category->name }}</td>
                                 <td>

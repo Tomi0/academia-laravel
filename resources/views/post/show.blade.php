@@ -24,6 +24,15 @@
                         {!! $post->contenido !!}
                         <a href="{{ route('document.show', $post->document) }}" target="_blank">Ver documento</a>
                         <br />
+
+                        @if($post->user->id === auth()->user()->id)
+
+                            <form action="{{ route('post.destroy', $post) }}" method="POST">
+                                {{ csrf_field() }} {{ method_field('DELETE') }}
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('¿Seguro que desea eliminar el mensaje?')">Eliminar post</button>
+                            </form>
+
+                        @endif
                     </div>
                 </div>
             </div>
@@ -61,6 +70,8 @@
         <div class="row">
             <div class="col-lg-8">
                 <hr/>
+
+                <h5>Responder:</h5>
 
                 <form action="{{ route('post.respuesta.store', $post) }}" method="POST">
                     {{ csrf_field() }}

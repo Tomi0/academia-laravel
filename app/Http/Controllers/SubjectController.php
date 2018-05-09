@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Document;
+use App\Post;
 use App\Subject;
 use App\User;
 use Illuminate\Http\Request;
@@ -16,6 +17,16 @@ class SubjectController extends Controller
             return view('subject.show', compact('subject'));
         } else {
             return view('subject.matricula', compact('subject'));
+        }
+    }
+
+    public function showPost(Subject $subject)
+    {
+        if (isset(auth()->user()->subjects()->where('subject_id', $subject->id)->get()[0]) || $subject->user_id === auth()->user()->id) {
+            $posts = Post::where('subject_id', $subject->id)->latest()->paginate();
+            return view('post.index', compact('posts'));
+        } else {
+            abort(403);
         }
     }
 

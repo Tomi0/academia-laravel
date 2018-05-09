@@ -54,7 +54,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-12 form-group">
-                                <button type="submit" class="btn btn-primary">Crear post</button>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
                                 <a href="{{ route('admin.post') }}">Volver</a>
                             </div>
                         </div>

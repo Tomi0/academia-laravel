@@ -14,6 +14,7 @@
 // Rutas de páginas estáticas
 Route::get('/', 'PagesController@home')->name('pages.home');
 Route::get('/contact', 'PagesController@contact')->name('pages.contact');
+Route::post('/contact/store', 'PagesController@store')->name('pages.contact.store');
 Route::get('/about', 'PagesController@about')->name('pages.about');
 
 
@@ -27,6 +28,7 @@ Route::group([
     'middleware' => ['auth', 'role:alumno|profesor|admin']],
     function () {
         Route::get('/subject/{subject}', 'SubjectController@show')->name('subject');
+        Route::get('/subject/{subject}/post', 'SubjectController@showPost')->name('subject.post');
         Route::post('/subject/{subject}/matricular', 'SubjectController@matricular')->name('subject.matricular');
     });
 
@@ -57,6 +59,7 @@ Route::group([
     'middleware' => ['auth', 'role:alumno|profesor|admin']],
     function () {
         Route::get('/document/{document}', 'DocumentsController@show')->name('document.show');
+        Route::get('/document/{document}/post', 'DocumentsController@showPost')->name('document.post');
         Route::post('/document/{subject}/store', 'DocumentsController@store')->name('document.store');
         Route::delete('/document/{document}', 'DocumentsController@destroy')->name('document.delete');
     });
@@ -112,6 +115,11 @@ Route::group([
         Route::post('/post/store', 'PostsController@store')->name('admin.post.store');
         Route::put('/post/{post}', 'PostsController@update')->name('admin.post.update');
         Route::delete('/post/{post}', 'PostsController@destroy')->name('admin.post.destroy');
+
+        // RUTAS DE ADMINISTRACIÓN DE MENSAJES DE CONTACTO
+        Route::get('/contact', 'ContactmeController@index')->name('admin.contact.index');
+        Route::get('/contact/{contactme}', 'ContactmeController@solved')->name('admin.contact.solved');
+        Route::delete('/contact/{contactme}', 'ContactmeController@destroy')->name('admin.contact.destroy');
     });
 
 Auth::routes();

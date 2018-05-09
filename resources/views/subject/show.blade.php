@@ -10,6 +10,8 @@
 
         <h2>{{ $subject->category->name }}: {{ $subject->name }}</h2>
 
+        <a href="{{ route('subject.post', $subject) }}">Ver posts de {{ $subject->name }}</a>
+
         @include('partials.breadcrumb')
 
         @if($subject->user_id === auth()->user()->id)
@@ -32,7 +34,7 @@
 
                         <a href="{{ route('document.show', $doc) }}" target="_blank" class="btn btn-primary">Ver documento</a>
 
-                        <a href="{{ route('post.show', $doc) }}" class="btn btn-primary">Crear post</a>
+                        <a href="{{ route('document.post', $doc) }}" class="btn btn-primary">Ver posts asociados a este documento</a>
 
                         <hr />
 

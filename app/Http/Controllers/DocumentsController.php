@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Document;
+use App\Post;
 use App\Subject;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
@@ -15,6 +16,15 @@ class DocumentsController extends Controller
         $this->authorize('view', $document);
 
         return response()->file('/var/www/academia/storage/app/public/' . $document->url);
+    }
+
+    public function showPost(Document $document)
+    {
+        $this->authorize('view', $document);
+
+        $posts = Post::where('document_id', $document->id)->latest()->paginate();
+
+        return view('post.index', compact('posts'));
     }
 
     public function destroy(Document $document)

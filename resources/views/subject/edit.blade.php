@@ -8,8 +8,6 @@
 
         <div class="container">
 
-            @include('partials.messages')
-
             <div class="row">
                 <div class="col-lg-7">
                     <h3>Edición de {{ $subject->name }} en el curso {{ $subject->category->name }}:</h3>

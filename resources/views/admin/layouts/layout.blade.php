@@ -148,6 +148,9 @@
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
+                    <li>
+                        <a href="{{ route('admin.contact.index') }}"><i class="fa fa-book fa-fw"></i> Contact me messages</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->
