@@ -51,11 +51,12 @@
 
         <hr />
 
-        <h4>Crear un comentario</h4>
-
         @if(isset($subject->documents) && count($subject->documents) > 0)
             <div class="row">
                 <div class="col-lg-12">
+
+                    <h4>Crear un comentario</h4>
+
                     <form action="{{ route('post.store') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">

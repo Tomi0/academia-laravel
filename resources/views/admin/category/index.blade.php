@@ -34,7 +34,6 @@
                 <td>{{ $category->name }}</td>
                 <td>{{ isset($category->category) ? $category->category->name : '-' }}</td>
                 <td>
-                    <a href="{{ route('admin.category.edit', $category) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
                     <form action="{{ route('admin.category.destroy', $category) }}" method="POST" style="display: inline;">
                         {{ csrf_field() }} {{ method_field('DELETE') }}
                         <button class="btn btn-xs btn-danger" onclick="return confirm('¿Seguro que quiere eliminar el curso?')">
