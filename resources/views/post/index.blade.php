@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col-lg-12">
 
-                        <h5>{{ $post->document->subject->name }} en {{ $post->document->subject->category->name }}</h5>
+                        <h5>{{ $post->subject->name }} en {{ $post->subject->category->name }}</h5>
 
                         <div class="card">
                             <div class="card-header">
