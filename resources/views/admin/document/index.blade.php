@@ -10,10 +10,9 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="row">
 
-        <div class="row">
-
+        <div class="col-lg-12">
             <div class="panel panel-green">
                 <div class="panel-heading">
                     Crear un documento
@@ -72,73 +71,72 @@
                     </form>
                 </div>
             </div>
-
         </div>
 
-        <div class="row">
-            <h1>Administración de documentos</h1>
-            <hr>
-        </div>
+    </div>
 
-        <div class="row">
+    <div class="row">
+        <h1>Administración de documentos</h1>
+        <hr>
+    </div>
 
-            <div class="col-lg-12">
-                <div class="alert alert-info">
-                    <p><i class="fa fa-comment"></i> Las asignaturas sin documentos no se mostrarán</p>
-                </div>
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="alert alert-info">
+                <p><i class="fa fa-comment"></i> Las asignaturas sin documentos no se mostrarán</p>
             </div>
+        </div>
 
-            @foreach($subjects as $subject)
+        @foreach($subjects as $subject)
 
-                @if(isset($subject->documents) && count($subject->documents) > 0)
+            @if(isset($subject->documents) && count($subject->documents) > 0)
 
-                    <div class="col-md-6">
+                <div class="col-md-6">
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Curso: {{ $subject->category->name }} | Asignatura: {{ $subject->name }}
-                            </div>
-                            <div class="panel-body">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Curso: {{ $subject->category->name }} | Asignatura: {{ $subject->name }}
+                        </div>
+                        <div class="panel-body">
 
-                                <table class="table">
+                            <table class="table">
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Ver</th>
+                                    <th>Eliminar</th>
+                                </tr>
+
+                                @foreach($subject->documents as $document)
+
                                     <tr>
-                                        <th>Nombre</th>
-                                        <th>Ver</th>
-                                        <th>Eliminar</th>
+                                        <td>{{ $document->name }}</td>
+                                        <td>
+                                            <a href="{{ route('document.show', $document) }}" target="_blank" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i></a>
+                                        </td>
+                                        <td>
+                                            <form action="{{ route('admin.document.delete', $document) }}" method="POST">
+                                                {{ csrf_field() }} {{ method_field('DELETE') }}
+                                                <button class="btn btn-xs btn-danger" onclick="return confirm('¿Está seguro de que quiere eliminar el documento?')">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+
                                     </tr>
 
-                                    @foreach($subject->documents as $document)
+                                @endforeach
 
-                                        <tr>
-                                            <td>{{ $document->name }}</td>
-                                            <td>
-                                                <a href="{{ route('document.show', $document) }}" target="_blank" class="btn btn-xs btn-primary"><i class="fa fa-eye"></i></a>
-                                            </td>
-                                            <td>
-                                                <form action="{{ route('admin.document.delete', $document) }}" method="POST">
-                                                    {{ csrf_field() }} {{ method_field('DELETE') }}
-                                                    <button class="btn btn-xs btn-danger" onclick="return confirm('¿Está seguro de que quiere eliminar el documento?')">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </form>
-                                            </td>
+                            </table>
 
-                                        </tr>
-
-                                    @endforeach
-
-                                </table>
-
-                            </div>
                         </div>
-
                     </div>
 
-                @endif
+                </div>
 
-            @endforeach
+            @endif
 
-        </div>
+        @endforeach
 
     </div>
 

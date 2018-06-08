@@ -46,7 +46,7 @@
                         <td>{{ count($subject->users) }}</td>
                         <td>
                             {{ $subject->matricula }}
-                            <a href="{{ route('admin.subject.codigomatricula', $subject) }}" class="btn btn-xs btn-info pull-right" onclick="return confirm('¿Seguro que quiere eliminar esta asignatura? Se borrarán todos sus documentos.')">
+                            <a href="{{ route('admin.subject.codigomatricula', $subject) }}" class="btn btn-xs btn-info pull-right" onclick="return confirm('¿Seguro que quiere cambiar la clave de la matrícula?')">
                                 <i class="fa fa-refresh"></i>
                             </a>
                         </td>

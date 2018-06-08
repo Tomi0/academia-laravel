@@ -39,9 +39,17 @@ class SubjectsController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|string|max:100',
-            'category_id' => 'required',
-            'user_id' => 'required'
+            'category_id' => 'required|exists:categories,id',
+            'user_id' => 'required|exists:users,id'
         ]);
+
+        $category = Category::where('id', $request->category_id)->first();
+
+        $arraySubcategoies = Category::where('category_id', $category->id)->get();
+
+        if (isset($arraySubcategoies) && count($arraySubcategoies) > 0) {
+            return redirect()->back()->with('fail', 'El curso seleccionado tiene subcursos y por tanto no puede tener asignaturas');
+        }
 
         Subject::create($request->all());
 
@@ -60,8 +68,8 @@ class SubjectsController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|string|max:100',
-            'category_id' => 'required',
-            'user_id' => 'required'
+            'category_id' => 'required|exists:categories,id',
+            'user_id' => 'required|exists:users,id'
         ]);
 
         $subject->name = $request->name;
